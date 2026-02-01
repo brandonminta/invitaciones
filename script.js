@@ -65,7 +65,9 @@ setInterval(tick, 1000);
 // Ejemplo real (ficticio):
 // const FORM_PREFILL_BASE = "https://docs.google.com/forms/d/e/XXXXX/viewform?usp=pp_url&entry.123456789=";
 
-const FORM_PREFILL_BASE = "PEGA_AQUI_TU_PREFILL_BASE_HASTA_EL_IGUAL";
+const FORM_PREFILL_BASE =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfLBIkZd2bMnQ1hl3HSAmF9QQ7-w8F3R3pFjW_ykoXMgZZv-g/viewform?usp=pp_url&entry.860157850=";
+
 
 const rsvpBtn = document.getElementById("rsvpBtn");
 const rsvpHint = document.getElementById("rsvpHint");

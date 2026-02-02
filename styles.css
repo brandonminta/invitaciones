@@ -1,13 +1,12 @@
 :root{
   --bg: #f6f3ec;
+
+  --cream: #fff6e7;      /* color de relleno (letras) */
+  --brown: #6b4a2c;      /* borde café */
+  --greenDark: #1f5a2b;  /* borde verde oscuro */
+
   --text: rgba(38, 36, 34, .92);
   --muted: rgba(38, 36, 34, .72);
-
-  --green: #6aa36a;
-  --greenDark: #2f6b3a;
-
-  --brown: #6b4a2c;
-  --cream: #fff6e7;
 
   --shadow: 0 14px 32px rgba(40, 30, 15, .12);
 }
@@ -19,9 +18,9 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
   background:
-    radial-gradient(900px 600px at 15% 10%, rgba(106,163,106,.16), transparent 60%),
-    radial-gradient(900px 600px at 85% 20%, rgba(214,162,74,.14), transparent 60%),
-    radial-gradient(900px 600px at 70% 95%, rgba(106,163,106,.08), transparent 60%),
+    radial-gradient(900px 600px at 15% 10%, rgba(106,163,106,.14), transparent 60%),
+    radial-gradient(900px 600px at 85% 20%, rgba(214,162,74,.12), transparent 60%),
+    radial-gradient(900px 600px at 70% 95%, rgba(106,163,106,.07), transparent 60%),
     var(--bg);
   overflow-x: hidden;
 }
@@ -32,7 +31,7 @@ body{
   padding: 18px 14px 34px;
 }
 
-/* Solo jungle y leaf */
+/* SOLO jungle + leaf */
 .decor{
   position: fixed;
   z-index: -1;
@@ -40,7 +39,6 @@ body{
   user-select: none;
   filter: drop-shadow(0 10px 18px rgba(40,30,15,.10));
 }
-
 .decor--jungle{
   left: -18px;
   bottom: -18px;
@@ -48,7 +46,6 @@ body{
   max-width: 55vw;
   opacity: .55;
 }
-
 .decor--leaf{
   right: -22px;
   top: -10px;
@@ -58,15 +55,8 @@ body{
   transform: rotate(8deg);
 }
 
-/* Hoja continua */
-.sheet{
-  background: rgba(255,255,255,.70);
-  border-radius: 28px;
-  box-shadow: var(--shadow);
-  padding: 18px 14px 22px;
-  position: relative;
-  overflow: hidden;
-}
+/* Secciones corridas (sin paneles) */
+.block{ margin-top: 16px; }
 
 /* HERO */
 .hero{
@@ -76,131 +66,179 @@ body{
 
 .hero-illustration img{
   width: 100%;
-  max-width: 310px;
+  max-width: 330px;
   display:block;
   margin: 4px auto 6px;
 }
 
 .quote{
   margin: 12px auto 6px;
-  max-width: 46ch;
+  max-width: 48ch;
   color: var(--muted);
   font-weight: 650;
   line-height: 1.55;
 }
 
-/* “Letras abombadas” sin fuente externa:
-   usamos sombra múltiple para simular borde. */
-.bubble{
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 999px;
+/* ===== Tipografía “infantil abombada” (solo texto, sin fondos) ===== */
+/* Simulamos borde con múltiples sombras y damos sensación redondeada */
+.t{
+  margin: 0;
+  display:block;
+  text-align:center;
   font-weight: 1000;
   letter-spacing: .2px;
-  line-height: 1.1;
-  box-shadow: 0 10px 18px rgba(40,30,15,.10);
+  -webkit-font-smoothing: antialiased;
 }
 
-.bubble--big{ font-size: 30px; }
-.bubble--mid{ font-size: 18px; padding: 9px 14px; }
-.bubble--small{ font-size: 14px; padding: 8px 14px; }
-
-.bubble--green{
-  background: rgba(106,163,106,.16);
-  color: var(--greenDark);
-  border: 2px solid rgba(107,74,44,.35);
+/* DEMIR grande: verde + borde café grueso */
+.t--demir{
+  font-size: 44px;
+  line-height: 1.02;
+  color: rgba(47,107,58,.98); /* verde */
   text-shadow:
-    -1px -1px 0 rgba(107,74,44,.65),
-     1px -1px 0 rgba(107,74,44,.65),
-    -1px  1px 0 rgba(107,74,44,.65),
-     1px  1px 0 rgba(107,74,44,.65);
+    /* borde café grueso */
+    -2px -2px 0 rgba(107,74,44,.85),
+     2px -2px 0 rgba(107,74,44,.85),
+    -2px  2px 0 rgba(107,74,44,.85),
+     2px  2px 0 rgba(107,74,44,.85),
+    -3px  0px 0 rgba(107,74,44,.80),
+     3px  0px 0 rgba(107,74,44,.80),
+     0px -3px 0 rgba(107,74,44,.80),
+     0px  3px 0 rgba(107,74,44,.80),
+    0 10px 18px rgba(40,30,15,.10);
 }
 
-.bubble--cream{
-  background: var(--cream);
-  color: rgba(38,36,34,.90);
-  border: 2px solid rgba(107,74,44,.35);
+/* Subtítulo: crema + borde café */
+.t--sub{
+  font-size: 20px;
+  margin-top: 6px;
+  color: var(--cream);
   text-shadow:
-    -1px -1px 0 rgba(107,74,44,.55),
-     1px -1px 0 rgba(107,74,44,.55),
-    -1px  1px 0 rgba(107,74,44,.55),
-     1px  1px 0 rgba(107,74,44,.55);
+    -2px -2px 0 rgba(107,74,44,.75),
+     2px -2px 0 rgba(107,74,44,.75),
+    -2px  2px 0 rgba(107,74,44,.75),
+     2px  2px 0 rgba(107,74,44,.75),
+    0 10px 18px rgba(40,30,15,.10);
 }
 
-.bubble--border-brown{
-  border-color: rgba(107,74,44,.42);
+/* Wooden titles: crema + borde café, más grande */
+.t--wood{
+  font-size: 20px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.75),
+     2px -2px 0 rgba(107,74,44,.75),
+    -2px  2px 0 rgba(107,74,44,.75),
+     2px  2px 0 rgba(107,74,44,.75),
+    0 10px 18px rgba(40,30,15,.12);
 }
 
-/* Arqueado suave: se logra con un “tilt” pequeño + letter spacing */
-.bubble--arched{
-  transform: rotate(-1.2deg);
+/* Fecha: crema + borde café */
+.t--date{
+  font-size: 22px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.75),
+     2px -2px 0 rgba(107,74,44,.75),
+    -2px  2px 0 rgba(107,74,44,.75),
+     2px  2px 0 rgba(107,74,44,.75);
 }
 
-/* Bloques “Mis Padres / Mis Padrinos” */
-.ribbon-block{
-  margin-top: 14px;
-  text-align: center;
+/* Labels (“¿Cuánto falta?”, “Confirmación…”) sin fondo */
+.t--label{
+  font-size: 18px;
+  margin: 0 auto 10px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.75),
+     2px -2px 0 rgba(107,74,44,.75),
+    -2px  2px 0 rgba(107,74,44,.75),
+     2px  2px 0 rgba(107,74,44,.75);
 }
 
+/* Títulos de círculos */
+.t--circle{
+  font-size: 22px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.78),
+     2px -2px 0 rgba(107,74,44,.78),
+    -2px  2px 0 rgba(107,74,44,.78),
+     2px  2px 0 rgba(107,74,44,.78);
+}
+
+/* Gracias sin fondo, estilo similar */
+.t--thanks{
+  font-size: 22px;
+  margin-top: 16px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(47,107,58,.85),
+     2px -2px 0 rgba(47,107,58,.85),
+    -2px  2px 0 rgba(47,107,58,.85),
+     2px  2px 0 rgba(47,107,58,.85);
+}
+
+/* Arqueado sutil (rotación leve) */
+.t--arched{ transform: rotate(-1.2deg); }
+
+/* Wooden blocks */
 .wooden-title{
   position: relative;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin: 2px 0 10px;
+  margin: 2px 0 6px; /* menos separación */
 }
 
 .wooden-title img{
   width: 100%;
-  max-width: 340px;
+  max-width: 360px;
   display:block;
-  filter: drop-shadow(0 10px 16px rgba(40,30,15,.14));
+  filter: drop-shadow(0 12px 18px rgba(40,30,15,.14));
 }
 
 .wooden-title__text{
   position:absolute;
 }
 
-/* Caja de nombres con borde verde oscuro y fondo crema */
-.name-box{
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  background: var(--cream);
-  border: 2px solid rgba(47,107,58,.55);
-  border-radius: 20px;
-  padding: 12px 12px;
-  box-shadow: 0 10px 18px rgba(40,30,15,.08);
+/* Nombres: crema + borde verde oscuro (SIN cajas) */
+.names{
+  margin: 2px auto 0;
+  text-align:center;
+  line-height: 1.25;
 }
 
-.name-line{
+.name{
+  display:block;
+  font-size: 20px;
   font-weight: 1000;
-  font-size: 18px;
-  color: rgba(38,36,34,.92);
+  color: var(--cream);
   text-shadow:
-    -1px -1px 0 rgba(47,107,58,.45),
-     1px -1px 0 rgba(47,107,58,.45),
-    -1px  1px 0 rgba(47,107,58,.45),
-     1px  1px 0 rgba(47,107,58,.45);
+    -2px -2px 0 rgba(31,90,43,.85),
+     2px -2px 0 rgba(31,90,43,.85),
+    -2px  2px 0 rgba(31,90,43,.85),
+     2px  2px 0 rgba(31,90,43,.85);
 }
 
-.name-sep{
-  color: rgba(38,36,34,.55);
-  font-weight: 800;
+.and{
+  display:block;
   margin: 2px 0;
+  font-weight: 900;
+  color: rgba(38,36,34,.60);
 }
 
-/* Pergamino fecha (papier a todo ancho) */
+/* Fecha con papiro detrás (papier) */
 .date-scroll{
   position: relative;
-  margin: 16px 0 10px;
+  margin: 16px 0 8px;
 }
 
 .date-scroll__img{
   width: 100%;
   display:block;
   border-radius: 18px;
-  filter: drop-shadow(0 12px 20px rgba(40,30,15,.10));
+  filter: drop-shadow(0 14px 20px rgba(40,30,15,.10));
 }
 
 .date-scroll__text{
@@ -211,22 +249,10 @@ body{
   justify-content:center;
   padding: 0 14px;
   text-align:center;
-  border-radius: 18px;
-  box-shadow: none; /* sobre imagen */
-}
-
-/* Cuánto falta */
-.section-label{
-  display:block;
-  margin: 12px auto 10px;
-  text-align:center;
 }
 
 /* Contador simple */
-.count-simple{
-  text-align:center;
-  padding: 6px 6px 2px;
-}
+.count-simple{ text-align:center; padding: 6px 6px 2px; }
 
 .count-simple__nums{
   display:flex;
@@ -237,8 +263,8 @@ body{
 }
 
 .count-simple .n{
-  font-size: 30px;
-  min-width: 40px;
+  font-size: 34px;
+  min-width: 42px;
   color: rgba(38,36,34,.92);
   text-shadow:
     -1px -1px 0 rgba(107,74,44,.35),
@@ -263,117 +289,137 @@ body{
   text-transform: uppercase;
   color: rgba(38,36,34,.62);
   font-weight: 900;
-  max-width: 360px;
+  max-width: 380px;
   margin-left:auto;
   margin-right:auto;
 }
+
+/* Espacio extra entre contador y misa */
+.spacer{ height: 22px; }
 
 /* Círculos Misa/Recepción */
 .circle-section{
   position: relative;
   margin-top: 18px;
-  margin-bottom: 8px;
-  min-height: 220px;
+  margin-bottom: 10px;
+  min-height: 250px;
 }
 
 .circle{
-  width: min(320px, 92%);
+  width: min(360px, 94%);
   background: rgba(255,255,255,.78);
   border: 2px solid rgba(107,74,44,.28);
   border-radius: 999px;
-  padding: 18px 16px;
-  box-shadow: 0 14px 26px rgba(40,30,15,.10);
+  padding: 22px 18px;
+  box-shadow: 0 16px 28px rgba(40,30,15,.10);
   position: relative;
 }
 
-.circle__title{
-  display:inline-block;
+.circle__head{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
   margin-bottom: 10px;
-  box-shadow: none;
+}
+
+.circle__icon{
+  font-size: 26px;
+  filter: drop-shadow(0 10px 16px rgba(40,30,15,.12));
 }
 
 .circle__time{
-  font-weight: 1000;
-  margin: 4px 0;
+  text-align:center;
+  font-weight: 1100;
+  font-size: 22px;
+  margin: 2px 0 6px;
 }
 
 .circle__place{
-  font-weight: 800;
+  text-align:center;
+  font-weight: 850;
   color: rgba(38,36,34,.78);
-  margin: 6px 0 12px;
+  margin: 0 0 14px;
 }
 
+/* mejor botón de mapa */
 .btn-map{
-  display:inline-flex;
-  justify-content:center;
+  display:flex;
   align-items:center;
+  justify-content:center;
+  gap: 10px;
   width: 100%;
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.95);
-  border: 2px solid rgba(107,74,44,.35);
+  padding: 13px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.98);
+  border: 2px solid rgba(107,74,44,.38);
   color: rgba(38,36,34,.92);
   text-decoration: none;
   font-weight: 1000;
+  box-shadow: 0 14px 24px rgba(40,30,15,.10);
+  transition: transform .08s ease, box-shadow .08s ease;
 }
 
-.circle-section--left{
-  display:flex;
-  justify-content:flex-start;
+.btn-map__icon{
+  font-size: 18px;
 }
 
-.circle-section--right{
-  display:flex;
-  justify-content:flex-end;
-}
+.btn-map:active{ transform: scale(.99); }
 
+/* alineación simétrica */
+.circle-section--left{ display:flex; justify-content:flex-start; }
+.circle-section--right{ display:flex; justify-content:flex-end; }
+
+/* decoraciones sobre círculos */
 .circle-decor{
   position:absolute;
-  width: 105px;
+  width: 120px;
   pointer-events:none;
   user-select:none;
-  filter: drop-shadow(0 12px 18px rgba(40,30,15,.12));
+  filter: drop-shadow(0 14px 20px rgba(40,30,15,.12));
 }
 
+/* jeep arriba derecha */
 .circle-decor--jeep{
-  right: 8%;
-  top: -18px;
-  transform: rotate(8deg);
+  right: 6%;
+  top: -22px;
+  transform: rotate(10deg);
 }
 
+/* coconut movido a la derecha (como pediste) */
 .circle-decor--coconut{
-  left: 8%;
-  top: -18px;
-  transform: rotate(-8deg);
+  right: 10%;
+  top: -24px;
+  transform: rotate(-10deg);
 }
 
 /* Confirmación */
 .confirm{
   text-align:center;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .confirm-text{
-  margin: 8px auto 12px;
-  max-width: 50ch;
+  margin: 8px auto 14px;
+  max-width: 52ch;
   color: rgba(38,36,34,.70);
   font-weight: 650;
   line-height: 1.55;
 }
 
-/* Botón grande blanco con texto borde negro */
+/* Botón RSVP grande blanco con borde negro y texto borde */
 .btn-rsvp{
   width: 100%;
-  max-width: 360px;
-  padding: 16px 16px;
-  border-radius: 18px;
+  max-width: 380px;
+  padding: 18px 16px;
+  border-radius: 20px;
   background: #ffffff;
-  border: 3px solid rgba(0,0,0,.78);
+  border: 3px solid rgba(0,0,0,.82);
   color: rgba(38,36,34,.95);
   font-weight: 1100;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 14px 26px rgba(40,30,15,.12);
+  box-shadow: 0 16px 28px rgba(40,30,15,.12);
   text-shadow:
     -1px -1px 0 rgba(0,0,0,.55),
      1px -1px 0 rgba(0,0,0,.55),
@@ -383,14 +429,12 @@ body{
 
 .btn-rsvp:active{ transform: scale(.99); }
 
-.thanks{
-  margin-top: 12px;
-}
+.thanks{ margin-top: 14px; }
 
 .confirm-foot{
   margin: 8px 0 0;
   color: rgba(38,36,34,.72);
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .footer{
@@ -398,12 +442,12 @@ body{
   margin-top: 18px;
   padding-bottom: 6px;
   color: rgba(38,36,34,.62);
-  font-weight: 700;
+  font-weight: 750;
 }
 
 /* Responsive */
 @media (max-width: 420px){
-  .bubble--big{ font-size: 28px; }
-  .count-simple .n{ font-size: 28px; }
-  .circle-decor{ width: 95px; }
+  .t--demir{ font-size: 38px; }
+  .count-simple .n{ font-size: 30px; }
+  .circle-decor{ width: 110px; }
 }

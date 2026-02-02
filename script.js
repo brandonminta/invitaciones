@@ -8,12 +8,6 @@ function getParam(key){
 
 const invitee = (getParam("name") || "").trim();
 
-const greetingEl = document.getElementById("greeting");
-if (invitee){
-  greetingEl.textContent = `Querid@ ${invitee},`;
-} else {
-  greetingEl.textContent = `Querid@ invitad@,`;
-}
 
 // =========================
 // 2) Contador (misa 11:00) — Santo Domingo (UTC-5)

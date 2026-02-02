@@ -186,7 +186,7 @@ body{
   position: absolute;
   left: 50%;
   bottom: 0;
-  transform-origin: 0 100px;
+  transform-origin: 0 120px;
   font-family: "Changa One", system-ui, sans-serif;
   font-weight: 400;
   display:inline-block;
@@ -237,29 +237,31 @@ body{
 
 /* Posicionamiento de letras en arco (manual para 11-12 chars aprox) */
 /* DEMIR DUTÁN (10 letras + espacio) */
-.arc--demir span:nth-child(1){ transform: rotate(-28deg) translateX(-50%); }
-.arc--demir span:nth-child(2){ transform: rotate(-22deg) translateX(-50%); }
-.arc--demir span:nth-child(3){ transform: rotate(-16deg) translateX(-50%); }
-.arc--demir span:nth-child(4){ transform: rotate(-10deg) translateX(-50%); }
-.arc--demir span:nth-child(5){ transform: rotate(-4deg)  translateX(-50%); }
-.arc--demir span:nth-child(6){ transform: rotate(4deg)   translateX(-50%); opacity:0; } /* gap */
-.arc--demir span:nth-child(7){ transform: rotate(10deg)  translateX(-50%); }
-.arc--demir span:nth-child(8){ transform: rotate(16deg)  translateX(-50%); }
-.arc--demir span:nth-child(9){ transform: rotate(22deg)  translateX(-50%); }
-.arc--demir span:nth-child(10){ transform: rotate(28deg) translateX(-50%); }
-.arc--demir span:nth-child(11){ transform: rotate(34deg) translateX(-50%); }
+/* DEMIR DUTÁN – arco más suave */
+.arc--demir span:nth-child(1){ transform: rotate(-18deg) translateX(-50%); }
+.arc--demir span:nth-child(2){ transform: rotate(-14deg) translateX(-50%); }
+.arc--demir span:nth-child(3){ transform: rotate(-10deg) translateX(-50%); }
+.arc--demir span:nth-child(4){ transform: rotate(-6deg)  translateX(-50%); }
+.arc--demir span:nth-child(5){ transform: rotate(-2deg)  translateX(-50%); }
+.arc--demir span:nth-child(6){ transform: rotate(2deg)   translateX(-50%); opacity:0; } /* gap */
+.arc--demir span:nth-child(7){ transform: rotate(6deg)   translateX(-50%); }
+.arc--demir span:nth-child(8){ transform: rotate(10deg)  translateX(-50%); }
+.arc--demir span:nth-child(9){ transform: rotate(14deg)  translateX(-50%); }
+.arc--demir span:nth-child(10){ transform: rotate(18deg) translateX(-50%); }
+.arc--demir span:nth-child(11){ transform: rotate(22deg) translateX(-50%); }
+
 
 /* MIS PADRES (9 letras + espacio): ajusta arco bonito */
-.arc--wood span:nth-child(1){ transform: rotate(-26deg) translateX(-50%); }
-.arc--wood span:nth-child(2){ transform: rotate(-20deg) translateX(-50%); }
-.arc--wood span:nth-child(3){ transform: rotate(-14deg) translateX(-50%); }
-.arc--wood span:nth-child(4){ transform: rotate(-6deg)  translateX(-50%); opacity:0; } /* gap */
-.arc--wood span:nth-child(5){ transform: rotate(0deg)   translateX(-50%); }
-.arc--wood span:nth-child(6){ transform: rotate(8deg)   translateX(-50%); }
-.arc--wood span:nth-child(7){ transform: rotate(16deg)  translateX(-50%); }
-.arc--wood span:nth-child(8){ transform: rotate(22deg)  translateX(-50%); }
-.arc--wood span:nth-child(9){ transform: rotate(28deg)  translateX(-50%); }
-.arc--wood span:nth-child(10){ transform: rotate(34deg) translateX(-50%); }
+.arc--wood span:nth-child(1){ transform: rotate(-14deg) translateX(-50%); }
+.arc--wood span:nth-child(2){ transform: rotate(-10deg) translateX(-50%); }
+.arc--wood span:nth-child(3){ transform: rotate(-6deg)  translateX(-50%); }
+.arc--wood span:nth-child(4){ transform: rotate(-2deg)  translateX(-50%); opacity:0; }
+.arc--wood span:nth-child(5){ transform: rotate(2deg)   translateX(-50%); }
+.arc--wood span:nth-child(6){ transform: rotate(6deg)   translateX(-50%); }
+.arc--wood span:nth-child(7){ transform: rotate(10deg)  translateX(-50%); }
+.arc--wood span:nth-child(8){ transform: rotate(14deg)  translateX(-50%); }
+.arc--wood span:nth-child(9){ transform: rotate(18deg)  translateX(-50%); }
+
 
 /* Wooden container */
 .wooden-title{

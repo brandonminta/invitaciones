@@ -9,67 +9,65 @@
 </head>
 
 <body>
-  <!-- Solo estas 2 decoraciones de fondo -->
+  <!-- Solo 2 decoraciones -->
   <img class="decor decor--jungle" src="img/jungle.png" alt="" aria-hidden="true">
   <img class="decor decor--leaf" src="img/leaf.png" alt="" aria-hidden="true">
 
   <main class="wrap">
 
-    <!-- HOJA CONTINUA (sin cards separados) -->
-    <section class="sheet">
-
-      <!-- HERO -->
-      <header class="hero">
-        <div class="hero-illustration">
-          <img src="img/hero.png" alt="Ilustración temática jungla" />
-        </div>
-
-        <h1 class="bubble bubble--big bubble--green bubble--arched">Demir Dután</h1>
-        <h2 class="bubble bubble--mid bubble--cream">Mi Bautizo y Primer Año</h2>
-
-        <p class="quote">
-          En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida.
-        </p>
-      </header>
-
-      <!-- MIS PADRES -->
-      <div class="ribbon-block">
-        <div class="wooden-title">
-          <img src="img/wooden.png" alt="" aria-hidden="true">
-          <div class="wooden-title__text bubble bubble--small bubble--green bubble--arched">Mis Padres</div>
-        </div>
-
-        <div class="name-box">
-          <div class="name-line">Joss</div>
-          <div class="name-sep">y</div>
-          <div class="name-line">May</div>
-        </div>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-illustration">
+        <img src="img/hero.png" alt="Ilustración temática jungla" />
       </div>
 
-      <!-- MIS PADRINOS -->
-      <div class="ribbon-block">
-        <div class="wooden-title">
-          <img src="img/wooden.png" alt="" aria-hidden="true">
-          <div class="wooden-title__text bubble bubble--small bubble--green bubble--arched">Mis Padrinos</div>
-        </div>
+      <h1 class="t t--demir t--arched">Demir Dután</h1>
+      <h2 class="t t--sub">Mi Bautizo y Primer Año</h2>
 
-        <div class="name-box">
-          <div class="name-line">Maria</div>
-          <div class="name-sep">y</div>
-          <div class="name-line">Jose</div>
-        </div>
+      <p class="quote">
+        En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida.
+      </p>
+    </header>
+
+    <!-- MIS PADRES -->
+    <section class="block">
+      <div class="wooden-title">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <div class="wooden-title__text t t--wood t--arched">Mis Padres</div>
       </div>
 
-      <!-- FECHA (PAPIER) -->
+      <p class="names">
+        <span class="name">Joss</span>
+        <span class="and">y</span>
+        <span class="name">May</span>
+      </p>
+    </section>
+
+    <!-- MIS PADRINOS -->
+    <section class="block">
+      <div class="wooden-title">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <div class="wooden-title__text t t--wood t--arched">Mis Padrinos</div>
+      </div>
+
+      <p class="names">
+        <span class="name">Maria</span>
+        <span class="and">y</span>
+        <span class="name">Jose</span>
+      </p>
+    </section>
+
+    <!-- FECHA CON PAPIER -->
+    <section class="block">
       <div class="date-scroll">
         <img class="date-scroll__img" src="img/papier.png" alt="" aria-hidden="true">
-        <div class="date-scroll__text bubble bubble--mid bubble--cream bubble--border-brown">
-          Martes 17 Febrero
-        </div>
+        <div class="date-scroll__text t t--date t--arched">Martes 17 Febrero</div>
       </div>
+    </section>
 
-      <!-- CUANTO FALTA + CONTADOR -->
-      <h3 class="section-label bubble bubble--small bubble--cream bubble--border-brown">¿Cuánto falta?</h3>
+    <!-- CUÁNTO FALTA + CONTADOR -->
+    <section class="block">
+      <h3 class="t t--label">¿Cuánto falta?</h3>
 
       <div class="count-simple" aria-label="Cuenta regresiva">
         <div class="count-simple__nums">
@@ -82,59 +80,71 @@
           <span>DÍAS</span><span>HORAS</span><span>MIN</span><span>SEG</span>
         </div>
       </div>
-
-      <!-- MISA (círculo a la izquierda + jeep arriba derecha del círculo) -->
-      <section class="circle-section circle-section--left">
-        <div class="circle">
-          <div class="circle__title bubble bubble--small bubble--cream bubble--border-brown">Misa</div>
-          <div class="circle__time">🕚 11:00</div>
-          <div class="circle__place">📍 Iglesia Test</div>
-
-          <a class="btn-map" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
-            Mapa de ubicación
-          </a>
-        </div>
-
-        <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
-      </section>
-
-      <!-- RECEPCIÓN (círculo a la derecha + coconut arriba izquierda del círculo) -->
-      <section class="circle-section circle-section--right">
-        <div class="circle">
-          <div class="circle__title bubble bubble--small bubble--cream bubble--border-brown">Recepción</div>
-          <div class="circle__time">🕐 13:00</div>
-          <div class="circle__place">📍 Lugar Test</div>
-
-          <a class="btn-map" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
-            Mapa de ubicación
-          </a>
-        </div>
-
-        <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
-      </section>
-
-      <!-- CONFIRMACIÓN -->
-      <section class="confirm">
-        <h3 class="section-label bubble bubble--small bubble--cream bubble--border-brown">Confirmación de Asistencia</h3>
-
-        <p class="confirm-text">
-          Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.
-        </p>
-
-        <button class="btn-rsvp" id="rsvpBtn">Sí asistiré</button>
-
-        <div class="thanks bubble bubble--small bubble--green">Gracias</div>
-        <p class="confirm-foot">Por ser parte de este momento tan especial.</p>
-      </section>
-
-      <footer class="footer">
-        <p>Hecho con cariño para Demir</p>
-      </footer>
-
     </section>
+
+    <!-- ESPACIO EXTRA antes de Misa -->
+    <div class="spacer"></div>
+
+    <!-- MISA -->
+    <section class="circle-section circle-section--left">
+      <div class="circle">
+        <div class="circle__head">
+          <div class="circle__icon">⛪</div>
+          <div class="circle__title t t--circle">Misa</div>
+        </div>
+
+        <div class="circle__time">11:00</div>
+        <div class="circle__place">Iglesia Test</div>
+
+        <a class="btn-map" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
+          <span class="btn-map__icon">📍</span>
+          <span>Mapa de ubicación</span>
+        </a>
+      </div>
+
+      <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
+    </section>
+
+    <!-- RECEPCIÓN -->
+    <section class="circle-section circle-section--right">
+      <div class="circle">
+        <div class="circle__head">
+          <div class="circle__icon">🎉</div>
+          <div class="circle__title t t--circle">Recepción</div>
+        </div>
+
+        <div class="circle__time">13:00</div>
+        <div class="circle__place">Lugar Test</div>
+
+        <a class="btn-map" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
+          <span class="btn-map__icon">📍</span>
+          <span>Mapa de ubicación</span>
+        </a>
+      </div>
+
+      <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+    <section class="confirm block">
+      <h3 class="t t--label">Confirmación de Asistencia</h3>
+
+      <p class="confirm-text">
+        Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.
+      </p>
+
+      <button class="btn-rsvp" id="rsvpBtn">Sí asistiré</button>
+
+      <div class="thanks t t--thanks t--arched">Gracias</div>
+      <p class="confirm-foot">Por ser parte de este momento tan especial.</p>
+    </section>
+
+    <footer class="footer">
+      <p>Hecho con cariño para Demir</p>
+    </footer>
+
   </main>
 
-  <!-- Si tienes caché, cambia a script.js?v=3 -->
   <script src="script.js"></script>
 </body>
 </html>

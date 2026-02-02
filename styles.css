@@ -1,9 +1,10 @@
 :root{
   --bg: #f6f3ec;
 
-  --cream: #fff6e7;      /* color de relleno (letras) */
-  --brown: #6b4a2c;      /* borde café */
-  --greenDark: #1f5a2b;  /* borde verde oscuro */
+  --cream: #fff6e7;
+  --brown: #6b4a2c;
+  --green: #2f6b3a;
+  --greenDark: #1f5a2b;
 
   --text: rgba(38, 36, 34, .92);
   --muted: rgba(38, 36, 34, .72);
@@ -15,7 +16,7 @@
 
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  font-family: "Grandstander", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
   background:
     radial-gradient(900px 600px at 15% 10%, rgba(106,163,106,.14), transparent 60%),
@@ -31,7 +32,7 @@ body{
   padding: 18px 14px 34px;
 }
 
-/* SOLO jungle + leaf */
+/* Decoraciones */
 .decor{
   position: fixed;
   z-index: -1;
@@ -55,10 +56,8 @@ body{
   transform: rotate(8deg);
 }
 
-/* Secciones corridas (sin paneles) */
 .block{ margin-top: 16px; }
 
-/* HERO */
 .hero{
   text-align: center;
   padding: 6px 8px 8px;
@@ -71,156 +70,238 @@ body{
   margin: 4px auto 6px;
 }
 
-.quote{
-  margin: 12px auto 6px;
-  max-width: 48ch;
-  color: var(--muted);
-  font-weight: 650;
-  line-height: 1.55;
-}
+/* ===== Tipos ===== */
 
-/* ===== Tipografía “infantil abombada” (solo texto, sin fondos) ===== */
-/* Simulamos borde con múltiples sombras y damos sensación redondeada */
+/* Changa One SOLO títulos (clase .t) */
 .t{
-  margin: 0;
+  font-family: "Changa One", system-ui, sans-serif;
   display:block;
   text-align:center;
-  font-weight: 1000;
+  margin: 0;
+  font-weight: 400;
   letter-spacing: .2px;
   -webkit-font-smoothing: antialiased;
 }
 
-/* DEMIR grande: verde + borde café grueso */
-.t--demir{
-  font-size: 44px;
-  line-height: 1.02;
-  color: rgba(47,107,58,.98); /* verde */
-  text-shadow:
-    /* borde café grueso */
-    -2px -2px 0 rgba(107,74,44,.85),
-     2px -2px 0 rgba(107,74,44,.85),
-    -2px  2px 0 rgba(107,74,44,.85),
-     2px  2px 0 rgba(107,74,44,.85),
-    -3px  0px 0 rgba(107,74,44,.80),
-     3px  0px 0 rgba(107,74,44,.80),
-     0px -3px 0 rgba(107,74,44,.80),
-     0px  3px 0 rgba(107,74,44,.80),
-    0 10px 18px rgba(40,30,15,.10);
+/* Texto cuerpo con Grandstander */
+.p{
+  font-family: "Grandstander", system-ui, sans-serif;
+  text-align:center;
+  margin: 0 auto;
+  max-width: 52ch;
+  line-height: 1.55;
+  color: var(--muted);
+  font-weight: 650;
 }
 
-/* Subtítulo: crema + borde café */
-.t--sub{
-  font-size: 20px;
-  margin-top: 6px;
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(107,74,44,.75),
-     2px -2px 0 rgba(107,74,44,.75),
-    -2px  2px 0 rgba(107,74,44,.75),
-     2px  2px 0 rgba(107,74,44,.75),
-    0 10px 18px rgba(40,30,15,.10);
+.p--quote{ margin-top: 12px; }
+.p--body{ margin-top: 10px; }
+.p--foot{
+  margin-top: 12px;
+  font-weight: 800;
+  color: rgba(38,36,34,.62);
 }
 
-/* Wooden titles: crema + borde café, más grande */
-.t--wood{
-  font-size: 20px;
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(107,74,44,.75),
-     2px -2px 0 rgba(107,74,44,.75),
-    -2px  2px 0 rgba(107,74,44,.75),
-     2px  2px 0 rgba(107,74,44,.75),
-    0 10px 18px rgba(40,30,15,.12);
-}
-
-/* Fecha: crema + borde café */
-.t--date{
-  font-size: 22px;
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(107,74,44,.75),
-     2px -2px 0 rgba(107,74,44,.75),
-    -2px  2px 0 rgba(107,74,44,.75),
-     2px  2px 0 rgba(107,74,44,.75);
-}
-
-/* Labels (“¿Cuánto falta?”, “Confirmación…”) sin fondo */
-.t--label{
-  font-size: 18px;
-  margin: 0 auto 10px;
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(107,74,44,.75),
-     2px -2px 0 rgba(107,74,44,.75),
-    -2px  2px 0 rgba(107,74,44,.75),
-     2px  2px 0 rgba(107,74,44,.75);
-}
-
-/* Títulos de círculos */
-.t--circle{
-  font-size: 22px;
+/* ===== BORDES de texto (abombado) ===== */
+/* crema con borde café (para la mayoría) */
+.stroke-cream-brown{
   color: var(--cream);
   text-shadow:
     -2px -2px 0 rgba(107,74,44,.78),
      2px -2px 0 rgba(107,74,44,.78),
     -2px  2px 0 rgba(107,74,44,.78),
-     2px  2px 0 rgba(107,74,44,.78);
+     2px  2px 0 rgba(107,74,44,.78),
+    -3px  0px 0 rgba(107,74,44,.70),
+     3px  0px 0 rgba(107,74,44,.70),
+     0px -3px 0 rgba(107,74,44,.70),
+     0px  3px 0 rgba(107,74,44,.70);
 }
 
-/* Gracias sin fondo, estilo similar */
-.t--thanks{
-  font-size: 22px;
-  margin-top: 16px;
+/* verde con borde café grueso (Demir) */
+.stroke-green-brown-heavy{
+  color: rgba(47,107,58,.98);
+  text-shadow:
+    -3px -3px 0 rgba(107,74,44,.90),
+     3px -3px 0 rgba(107,74,44,.90),
+    -3px  3px 0 rgba(107,74,44,.90),
+     3px  3px 0 rgba(107,74,44,.90),
+    -4px  0px 0 rgba(107,74,44,.86),
+     4px  0px 0 rgba(107,74,44,.86),
+     0px -4px 0 rgba(107,74,44,.86),
+     0px  4px 0 rgba(107,74,44,.86),
+    0 12px 20px rgba(40,30,15,.10);
+}
+
+/* crema con borde verde oscuro (nombres) */
+.stroke-cream-green{
   color: var(--cream);
   text-shadow:
-    -2px -2px 0 rgba(47,107,58,.85),
-     2px -2px 0 rgba(47,107,58,.85),
-    -2px  2px 0 rgba(47,107,58,.85),
-     2px  2px 0 rgba(47,107,58,.85);
+    -2px -2px 0 rgba(31,90,43,.88),
+     2px -2px 0 rgba(31,90,43,.88),
+    -2px  2px 0 rgba(31,90,43,.88),
+     2px  2px 0 rgba(31,90,43,.88),
+    -3px  0px 0 rgba(31,90,43,.78),
+     3px  0px 0 rgba(31,90,43,.78),
+     0px -3px 0 rgba(31,90,43,.78),
+     0px  3px 0 rgba(31,90,43,.78);
 }
 
-/* Arqueado sutil (rotación leve) */
-.t--arched{ transform: rotate(-1.2deg); }
+/* Títulos específicos */
+.t--sub{
+  font-size: 22px;
+  margin-top: 10px;
+}
+.t--sub{ /* crema con borde café */
+  composes: stroke-cream-brown;
+}
 
-/* Wooden blocks */
+/* OJO: composes no existe en CSS puro.
+   Por eso repetimos estilo usando clases auxiliares más abajo. */
+
+/* Label: “Cuánto falta>”, “Confirmación…” */
+.t--label{
+  font-size: 20px;
+  margin: 0 auto 10px;
+}
+
+/* Círculo: MISA / RECEPCIÓN */
+.t--circle{
+  font-size: 24px;
+}
+
+/* Gracias */
+.t--thanks{
+  font-size: 26px;
+  margin-top: 16px;
+}
+
+/* ===== Arco REAL (semicírculo) ===== */
+.arc{
+  position: relative;
+  width: 320px;
+  height: 110px;
+  margin: 0 auto;
+}
+.arc span{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform-origin: 0 100px;
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  display:inline-block;
+  white-space: pre;
+}
+.arc .gap{ width: 14px; }
+
+/* DEMIR arco: grande + borde grueso */
+.arc--demir{
+  width: 340px;
+  height: 125px;
+  margin-top: 2px;
+}
+.arc--demir span{
+  font-size: 44px;
+}
+.arc--demir span{
+  color: rgba(47,107,58,.98);
+  text-shadow:
+    -3px -3px 0 rgba(107,74,44,.90),
+     3px -3px 0 rgba(107,74,44,.90),
+    -3px  3px 0 rgba(107,74,44,.90),
+     3px  3px 0 rgba(107,74,44,.90),
+    -4px  0px 0 rgba(107,74,44,.86),
+     4px  0px 0 rgba(107,74,44,.86),
+     0px -4px 0 rgba(107,74,44,.86),
+     0px  4px 0 rgba(107,74,44,.86);
+}
+
+/* Wooden arco: un poco más pequeño, crema + borde café */
+.arc--wood{
+  width: 320px;
+  height: 105px;
+}
+.arc--wood span{
+  font-size: 26px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.78),
+     2px -2px 0 rgba(107,74,44,.78),
+    -2px  2px 0 rgba(107,74,44,.78),
+     2px  2px 0 rgba(107,74,44,.78),
+    -3px  0px 0 rgba(107,74,44,.70),
+     3px  0px 0 rgba(107,74,44,.70),
+     0px -3px 0 rgba(107,74,44,.70),
+     0px  3px 0 rgba(107,74,44,.70);
+}
+
+/* Posicionamiento de letras en arco (manual para 11-12 chars aprox) */
+/* DEMIR DUTÁN (10 letras + espacio) */
+.arc--demir span:nth-child(1){ transform: rotate(-28deg) translateX(-50%); }
+.arc--demir span:nth-child(2){ transform: rotate(-22deg) translateX(-50%); }
+.arc--demir span:nth-child(3){ transform: rotate(-16deg) translateX(-50%); }
+.arc--demir span:nth-child(4){ transform: rotate(-10deg) translateX(-50%); }
+.arc--demir span:nth-child(5){ transform: rotate(-4deg)  translateX(-50%); }
+.arc--demir span:nth-child(6){ transform: rotate(4deg)   translateX(-50%); opacity:0; } /* gap */
+.arc--demir span:nth-child(7){ transform: rotate(10deg)  translateX(-50%); }
+.arc--demir span:nth-child(8){ transform: rotate(16deg)  translateX(-50%); }
+.arc--demir span:nth-child(9){ transform: rotate(22deg)  translateX(-50%); }
+.arc--demir span:nth-child(10){ transform: rotate(28deg) translateX(-50%); }
+.arc--demir span:nth-child(11){ transform: rotate(34deg) translateX(-50%); }
+
+/* MIS PADRES (9 letras + espacio): ajusta arco bonito */
+.arc--wood span:nth-child(1){ transform: rotate(-26deg) translateX(-50%); }
+.arc--wood span:nth-child(2){ transform: rotate(-20deg) translateX(-50%); }
+.arc--wood span:nth-child(3){ transform: rotate(-14deg) translateX(-50%); }
+.arc--wood span:nth-child(4){ transform: rotate(-6deg)  translateX(-50%); opacity:0; } /* gap */
+.arc--wood span:nth-child(5){ transform: rotate(0deg)   translateX(-50%); }
+.arc--wood span:nth-child(6){ transform: rotate(8deg)   translateX(-50%); }
+.arc--wood span:nth-child(7){ transform: rotate(16deg)  translateX(-50%); }
+.arc--wood span:nth-child(8){ transform: rotate(22deg)  translateX(-50%); }
+.arc--wood span:nth-child(9){ transform: rotate(28deg)  translateX(-50%); }
+.arc--wood span:nth-child(10){ transform: rotate(34deg) translateX(-50%); }
+
+/* Wooden container */
 .wooden-title{
   position: relative;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin: 2px 0 6px; /* menos separación */
+  margin: 2px 0 4px;
 }
-
 .wooden-title img{
   width: 100%;
-  max-width: 360px;
+  max-width: 380px;
   display:block;
   filter: drop-shadow(0 12px 18px rgba(40,30,15,.14));
 }
-
-.wooden-title__text{
+.wooden-title .arc{
   position:absolute;
+  top: -6px;
 }
 
-/* Nombres: crema + borde verde oscuro (SIN cajas) */
+/* Nombres sin caja, pegados */
 .names{
   margin: 2px auto 0;
   text-align:center;
-  line-height: 1.25;
+  line-height: 1.18;
 }
-
 .name{
   display:block;
-  font-size: 20px;
-  font-weight: 1000;
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
   color: var(--cream);
   text-shadow:
-    -2px -2px 0 rgba(31,90,43,.85),
-     2px -2px 0 rgba(31,90,43,.85),
-    -2px  2px 0 rgba(31,90,43,.85),
-     2px  2px 0 rgba(31,90,43,.85);
+    -2px -2px 0 rgba(31,90,43,.88),
+     2px -2px 0 rgba(31,90,43,.88),
+    -2px  2px 0 rgba(31,90,43,.88),
+     2px  2px 0 rgba(31,90,43,.88),
+    -3px  0px 0 rgba(31,90,43,.78),
+     3px  0px 0 rgba(31,90,43,.78),
+     0px -3px 0 rgba(31,90,43,.78),
+     0px  3px 0 rgba(31,90,43,.78);
 }
-
 .and{
   display:block;
   margin: 2px 0;
@@ -228,27 +309,56 @@ body{
   color: rgba(38,36,34,.60);
 }
 
-/* Fecha con papiro detrás (papier) */
+/* Fecha con papier */
 .date-scroll{
   position: relative;
-  margin: 16px 0 8px;
+  margin: 16px 0 10px;
 }
-
 .date-scroll__img{
   width: 100%;
   display:block;
   border-radius: 18px;
   filter: drop-shadow(0 14px 20px rgba(40,30,15,.10));
 }
-
 .date-scroll__text{
   position:absolute;
   inset: 0;
   display:flex;
+  flex-direction: column;
   align-items:center;
   justify-content:center;
+  gap: 4px;
   padding: 0 14px;
   text-align:center;
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.78),
+     2px -2px 0 rgba(107,74,44,.78),
+    -2px  2px 0 rgba(107,74,44,.78),
+     2px  2px 0 rgba(107,74,44,.78),
+    -3px  0px 0 rgba(107,74,44,.70),
+     3px  0px 0 rgba(107,74,44,.70),
+     0px -3px 0 rgba(107,74,44,.70),
+     0px  3px 0 rgba(107,74,44,.70);
+}
+
+/* Label styles (Cuánto falta / Confirmación) */
+.t--label{
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.78),
+     2px -2px 0 rgba(107,74,44,.78),
+    -2px  2px 0 rgba(107,74,44,.78),
+     2px  2px 0 rgba(107,74,44,.78),
+    -3px  0px 0 rgba(107,74,44,.70),
+     3px  0px 0 rgba(107,74,44,.70),
+     0px -3px 0 rgba(107,74,44,.70),
+     0px  3px 0 rgba(107,74,44,.70);
 }
 
 /* Contador simple */
@@ -263,8 +373,10 @@ body{
 }
 
 .count-simple .n{
-  font-size: 34px;
-  min-width: 42px;
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  min-width: 44px;
   color: rgba(38,36,34,.92);
   text-shadow:
     -1px -1px 0 rgba(107,74,44,.35),
@@ -294,25 +406,31 @@ body{
   margin-right:auto;
 }
 
-/* Espacio extra entre contador y misa */
-.spacer{ height: 22px; }
+/* Espacio extra */
+.spacer{ height: 26px; }
 
-/* Círculos Misa/Recepción */
+/* Círculos */
 .circle-section{
   position: relative;
   margin-top: 18px;
-  margin-bottom: 10px;
-  min-height: 250px;
+  margin-bottom: 12px;
+  min-height: 260px;
 }
 
+/* “metidos” a los bordes (ocultos un poco) */
+.circle-section--left{ display:flex; justify-content:flex-start; }
+.circle-section--left .circle{ margin-left: -24px; }   /* se corta un poco */
+
+.circle-section--right{ display:flex; justify-content:flex-end; }
+.circle-section--right .circle{ margin-right: -24px; } /* se corta un poco */
+
 .circle{
-  width: min(360px, 94%);
+  width: min(370px, 96%);
   background: rgba(255,255,255,.78);
   border: 2px solid rgba(107,74,44,.28);
   border-radius: 999px;
   padding: 22px 18px;
   box-shadow: 0 16px 28px rgba(40,30,15,.10);
-  position: relative;
 }
 
 .circle__head{
@@ -320,12 +438,22 @@ body{
   align-items:center;
   justify-content:center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
-
 .circle__icon{
-  font-size: 26px;
+  font-size: 28px;
   filter: drop-shadow(0 10px 16px rgba(40,30,15,.12));
+}
+.t--circle{
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(107,74,44,.78),
+     2px -2px 0 rgba(107,74,44,.78),
+    -2px  2px 0 rgba(107,74,44,.78),
+     2px  2px 0 rgba(107,74,44,.78);
 }
 
 .circle__time{
@@ -342,7 +470,6 @@ body{
   margin: 0 0 14px;
 }
 
-/* mejor botón de mapa */
 .btn-map{
   display:flex;
   align-items:center;
@@ -357,23 +484,13 @@ body{
   text-decoration: none;
   font-weight: 1000;
   box-shadow: 0 14px 24px rgba(40,30,15,.10);
-  transition: transform .08s ease, box-shadow .08s ease;
 }
-
-.btn-map__icon{
-  font-size: 18px;
-}
-
 .btn-map:active{ transform: scale(.99); }
 
-/* alineación simétrica */
-.circle-section--left{ display:flex; justify-content:flex-start; }
-.circle-section--right{ display:flex; justify-content:flex-end; }
-
-/* decoraciones sobre círculos */
+/* Decoraciones */
 .circle-decor{
   position:absolute;
-  width: 120px;
+  width: 128px;
   pointer-events:none;
   user-select:none;
   filter: drop-shadow(0 14px 20px rgba(40,30,15,.12));
@@ -382,32 +499,20 @@ body{
 /* jeep arriba derecha */
 .circle-decor--jeep{
   right: 6%;
-  top: -22px;
+  top: -26px;
   transform: rotate(10deg);
 }
 
-/* coconut movido a la derecha (como pediste) */
+/* coconut arriba derecha (pediste moverlo a la derecha) */
 .circle-decor--coconut{
   right: 10%;
-  top: -24px;
+  top: -28px;
   transform: rotate(-10deg);
 }
 
 /* Confirmación */
-.confirm{
-  text-align:center;
-  margin-top: 20px;
-}
+.confirm{ text-align:center; margin-top: 22px; }
 
-.confirm-text{
-  margin: 8px auto 14px;
-  max-width: 52ch;
-  color: rgba(38,36,34,.70);
-  font-weight: 650;
-  line-height: 1.55;
-}
-
-/* Botón RSVP grande blanco con borde negro y texto borde */
 .btn-rsvp{
   width: 100%;
   max-width: 380px;
@@ -416,8 +521,9 @@ body{
   background: #ffffff;
   border: 3px solid rgba(0,0,0,.82);
   color: rgba(38,36,34,.95);
-  font-weight: 1100;
-  font-size: 20px;
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
   cursor: pointer;
   box-shadow: 0 16px 28px rgba(40,30,15,.12);
   text-shadow:
@@ -426,28 +532,27 @@ body{
     -1px  1px 0 rgba(0,0,0,.55),
      1px  1px 0 rgba(0,0,0,.55);
 }
-
 .btn-rsvp:active{ transform: scale(.99); }
 
-.thanks{ margin-top: 14px; }
-
-.confirm-foot{
-  margin: 8px 0 0;
-  color: rgba(38,36,34,.72);
-  font-weight: 750;
-}
-
-.footer{
-  text-align:center;
-  margin-top: 18px;
-  padding-bottom: 6px;
-  color: rgba(38,36,34,.62);
-  font-weight: 750;
+.t--thanks{
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  margin-top: 16px;
+  color: var(--cream);
+  text-shadow:
+    -2px -2px 0 rgba(31,90,43,.88),
+     2px -2px 0 rgba(31,90,43,.88),
+    -2px  2px 0 rgba(31,90,43,.88),
+     2px  2px 0 rgba(31,90,43,.88);
 }
 
 /* Responsive */
 @media (max-width: 420px){
-  .t--demir{ font-size: 38px; }
-  .count-simple .n{ font-size: 30px; }
-  .circle-decor{ width: 110px; }
+  .arc--demir{ width: 320px; height: 115px; }
+  .arc--demir span{ font-size: 40px; }
+  .arc{ width: 300px; }
+  .arc--wood span{ font-size: 24px; }
+  .circle-section--left .circle{ margin-left: -18px; }
+  .circle-section--right .circle{ margin-right: -18px; }
 }

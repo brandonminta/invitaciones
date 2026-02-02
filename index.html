@@ -6,6 +6,11 @@
   <title>Bautizo & 1er Cumpleaños — Demir Dután</title>
   <meta name="description" content="Invitación web: Bautizo y 1er cumpleaños de Demir Dután." />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Grandstander:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,10 +26,16 @@
         <img src="img/hero.png" alt="Ilustración temática jungla" />
       </div>
 
-      <h1 class="t t--demir t--arched">Demir Dután</h1>
+      <!-- DEMIR arqueado REAL (semicírculo) -->
+      <div class="arc arc--demir" aria-label="Demir Dután">
+        <span>D</span><span>e</span><span>m</span><span>i</span><span>r</span>
+        <span class="gap"></span>
+        <span>D</span><span>u</span><span>t</span><span>á</span><span>n</span>
+      </div>
+
       <h2 class="t t--sub">Mi Bautizo y Primer Año</h2>
 
-      <p class="quote">
+      <p class="p p--quote">
         En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida.
       </p>
     </header>
@@ -33,13 +44,17 @@
     <section class="block">
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
-        <div class="wooden-title__text t t--wood t--arched">Mis Padres</div>
+        <div class="arc arc--wood" aria-label="Mis Padres">
+          <span>M</span><span>i</span><span>s</span>
+          <span class="gap"></span>
+          <span>P</span><span>a</span><span>d</span><span>r</span><span>e</span><span>s</span>
+        </div>
       </div>
 
       <p class="names">
-        <span class="name">Joss</span>
+        <span class="name">Dután León Maykel Douglas</span>
         <span class="and">y</span>
-        <span class="name">May</span>
+        <span class="name">Corte Macas Josselyn Anabel</span>
       </p>
     </section>
 
@@ -47,25 +62,33 @@
     <section class="block">
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
-        <div class="wooden-title__text t t--wood t--arched">Mis Padrinos</div>
+        <div class="arc arc--wood" aria-label="Mis Padrinos">
+          <span>M</span><span>i</span><span>s</span>
+          <span class="gap"></span>
+          <span>P</span><span>a</span><span>d</span><span>r</span><span>i</span><span>n</span><span>o</span><span>s</span>
+        </div>
       </div>
 
       <p class="names">
-        <span class="name">Maria</span>
+        <span class="name">Macas Macas Gladys Lorena</span>
         <span class="and">y</span>
-        <span class="name">Jose</span>
+        <span class="name">Corte Muy Celio Mesias</span>
       </p>
     </section>
 
-    <!-- FECHA CON PAPIER -->
+    <!-- FECHA 3 LÍNEAS sobre papier -->
     <section class="block">
       <div class="date-scroll">
         <img class="date-scroll__img" src="img/papier.png" alt="" aria-hidden="true">
-        <div class="date-scroll__text t t--date t--arched">Martes 17 Febrero</div>
+        <div class="date-scroll__text t t--date">
+          <div>Martes</div>
+          <div>17 de</div>
+          <div>Febrero</div>
+        </div>
       </div>
     </section>
 
-    <!-- CUÁNTO FALTA + CONTADOR -->
+    <!-- CUÁNTO FALTA > -->
     <section class="block">
       <h3 class="t t--label">¿Cuánto falta?</h3>
 
@@ -82,15 +105,14 @@
       </div>
     </section>
 
-    <!-- ESPACIO EXTRA antes de Misa -->
     <div class="spacer"></div>
 
-    <!-- MISA -->
+    <!-- MISA (más metido al borde izquierdo) -->
     <section class="circle-section circle-section--left">
       <div class="circle">
         <div class="circle__head">
           <div class="circle__icon">⛪</div>
-          <div class="circle__title t t--circle">Misa</div>
+          <div class="t t--circle">MISA</div>
         </div>
 
         <div class="circle__time">11:00</div>
@@ -105,12 +127,12 @@
       <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
     </section>
 
-    <!-- RECEPCIÓN -->
+    <!-- RECEPCIÓN (más metido al borde derecho) -->
     <section class="circle-section circle-section--right">
       <div class="circle">
         <div class="circle__head">
           <div class="circle__icon">🎉</div>
-          <div class="circle__title t t--circle">Recepción</div>
+          <div class="t t--circle">RECEPCIÓN</div>
         </div>
 
         <div class="circle__time">13:00</div>
@@ -129,19 +151,20 @@
     <section class="confirm block">
       <h3 class="t t--label">Confirmación de Asistencia</h3>
 
-      <p class="confirm-text">
+      <p class="p p--body">
         Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.
       </p>
 
-      <button class="btn-rsvp" id="rsvpBtn">Sí asistiré</button>
+      <button class="btn-rsvp" id="rsvpBtn">Si asistire</button>
 
-      <div class="thanks t t--thanks t--arched">Gracias</div>
-      <p class="confirm-foot">Por ser parte de este momento tan especial.</p>
+      <div class="t t--thanks">Gracias</div>
+
+      <p class="p p--body" style="margin-top:10px;">
+        Por ser parte de este momento tan especial.
+      </p>
+
+      <p class="p p--foot">Hecho con cariño para Demir</p>
     </section>
-
-    <footer class="footer">
-      <p>Hecho con cariño para Demir</p>
-    </footer>
 
   </main>
 

@@ -7,17 +7,33 @@
   <meta name="description" content="Invitación web: Bautizo y 1er cumpleaños de Demir Dután." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <!-- Decoraciones de fondo -->
+  <img class="decor decor--jungle" src="img/jungle.png" alt="" aria-hidden="true">
+  <img class="decor decor--leaf" src="img/leaf.png" alt="" aria-hidden="true">
+  <img class="decor decor--leave" src="img/leave.png" alt="" aria-hidden="true">
+  <img class="decor decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
+
   <main class="wrap">
-    <header class="card hero">
-      <div class="badge">✝️🎂</div>
-      <h1>Bautizo &amp; 1er Cumpleaños</h1>
+
+    <!-- HERO -->
+    <header class="paper hero">
+      <div class="hero-top">
+        <div class="badge">✝️🎂</div>
+      </div>
+
+      <h1 class="subtitle">Mi Bautizo y Primer Año</h1>
       <h2 class="name">Demir Dután</h2>
+
+      <div class="hero-illustration">
+        <img src="img/hero.png" alt="Ilustración temática jungla" />
+      </div>
 
       <p class="greeting" id="greeting">Querid@ invitad@,</p>
 
       <p class="lead">
-        Con mucha alegría te invitamos a celebrar el <b>Bautizo</b> y el <b>Primer Cumpleaños</b> de Demir.
+        Con mucha alegría te invitamos a celebrar el <b>Bautizo</b> y el <b>Primer Cumpleaños</b> de nuestro amado Demir. 🦁🌿
       </p>
 
       <div class="meta">
@@ -26,72 +42,144 @@
       </div>
     </header>
 
-    <section class="card">
-      <h3>⏳ Contador</h3>
-      <p class="muted">Cuenta regresiva para la misa (11:00).</p>
-      <div class="countdown" id="countdown">
-        <div class="cd-box"><div class="cd-num" id="d">--</div><div class="cd-lbl">Días</div></div>
-        <div class="cd-box"><div class="cd-num" id="h">--</div><div class="cd-lbl">Horas</div></div>
-        <div class="cd-box"><div class="cd-num" id="m">--</div><div class="cd-lbl">Min</div></div>
-        <div class="cd-box"><div class="cd-num" id="s">--</div><div class="cd-lbl">Seg</div></div>
+    <!-- FECHA + CONTADOR (estilo “placa / pergamino”) -->
+    <section class="paper">
+      <div class="scroll-date">
+        <div class="scroll-date__inner">
+          <div class="scroll-date__day">Martes</div>
+          <div class="scroll-date__date">17 Febrero</div>
+          <div class="scroll-date__year">2026</div>
+        </div>
       </div>
+
+      <h3 class="section-title">¿Cuánto falta?</h3>
+
+      <!-- Contador estilo barra -->
+      <div class="countbar" role="group" aria-label="Cuenta regresiva">
+        <div class="countbar__nums">
+          <span class="countbar__num" id="d">--</span>
+          <span class="countbar__sep">:</span>
+          <span class="countbar__num" id="h">--</span>
+          <span class="countbar__sep">:</span>
+          <span class="countbar__num" id="m">--</span>
+          <span class="countbar__sep">:</span>
+          <span class="countbar__num" id="s">--</span>
+        </div>
+        <div class="countbar__labels" aria-hidden="true">
+          <span>DÍAS</span><span>HORAS</span><span>MIN</span><span>SEG</span>
+        </div>
+      </div>
+
+      <p class="muted small center">Cuenta regresiva para la misa (11:00).</p>
     </section>
 
-    <section class="card">
-      <h3>✝️ Misa de Bautizo</h3>
-      <div class="row">
+    <!-- MISA -->
+    <section class="paper">
+      <div class="ribbon">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <span>✝️ Misa</span>
+      </div>
+
+      <div class="row center">
         <div class="pill">🕚 11:00</div>
         <div class="pill">📍 Iglesia Test</div>
       </div>
 
-      <a class="btn" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
-        Ver ubicación de la misa en Maps
-      </a>
+      <div class="map-frame">
+        <img class="map-frame__img" src="img/frame.png" alt="" aria-hidden="true">
+        <div class="map-frame__content">
+          <p class="muted small center" style="margin:0 0 10px;">
+            Abre la ubicación en Google Maps:
+          </p>
+          <a class="btn" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
+            Mapa de ubicación
+          </a>
 
-      <p class="muted small">
-        (Opcional) Si quieres un mapa incrustado, luego te explico cómo pegar el “embed” aquí.
-      </p>
+          <!-- Si luego quieres embed, reemplaza el bloque de arriba por un iframe aquí -->
+          <!--
+          <iframe class="map-embed" src="TU_EMBED" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          -->
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h3>🎉 Fiesta de Cumpleaños</h3>
-      <div class="row">
+    <!-- FIESTA -->
+    <section class="paper">
+      <div class="ribbon">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <span>🎉 Recepción</span>
+      </div>
+
+      <div class="row center">
         <div class="pill">🕐 13:00</div>
         <div class="pill">📍 Lugar Test</div>
       </div>
 
-      <a class="btn" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
-        Ver ubicación de la fiesta en Maps
-      </a>
+      <div class="map-frame">
+        <img class="map-frame__img" src="img/frame.png" alt="" aria-hidden="true">
+        <div class="map-frame__content">
+          <p class="muted small center" style="margin:0 0 10px;">
+            Abre la ubicación en Google Maps:
+          </p>
+          <a class="btn" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
+            Mapa de ubicación
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <p class="muted small">
-        (Opcional) También se puede incrustar el mapa aquí.
+    <!-- PADRES / PADRINOS -->
+    <section class="paper">
+      <div class="ribbon">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <span>Mis padres</span>
+      </div>
+      <p class="names center">
+        <b>Joss</b><br />
+        <span class="muted">y</span><br />
+        <b>May</b>
+      </p>
+
+      <div style="height:10px;"></div>
+
+      <div class="ribbon">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <span>Mis padrinos</span>
+      </div>
+      <p class="names center">
+        <b>Maria</b><br />
+        <span class="muted">y</span><br />
+        <b>Jose</b>
       </p>
     </section>
 
-    <section class="card">
-      <h3>👨‍👩‍👦 Padres y padrinos</h3>
-      <p class="text">
-        Con el amor de sus padres: <b>Joss</b> y <b>May</b>.<br/>
-        Y sus padrinos: <b>Maria</b> y <b>Jose</b>.
-      </p>
-    </section>
+    <!-- CONFIRMACIÓN -->
+    <section class="paper rsvp">
+      <div class="ribbon">
+        <img src="img/wooden.png" alt="" aria-hidden="true">
+        <span>Confirmación de asistencia</span>
+      </div>
 
-    <section class="card rsvp">
-      <h3>✅ Confirmación</h3>
-      <p class="text">Por favor, presiona el botón para confirmar tu asistencia.</p>
-      <button class="btn primary" id="rsvpBtn">ASISTIRÉ 💛</button>
-      <p class="muted small" id="rsvpHint">
-        Este botón abrirá el formulario (con tu nombre prellenado si usas link personalizado).
+      <p class="text center" style="margin-top:10px;">
+        Nos encantaría saber que nos acompañarás. 💛<br/>
+        Presiona el botón y luego <b>Enviar</b> para confirmar.
       </p>
+
+      <button class="btn primary" id="rsvpBtn">Sí asistiré</button>
+
+      <p class="muted small center" id="rsvpHint" style="margin-top:8px;">
+        Se abrirá el formulario con tu nombre prellenado (si usas el link personalizado).
+      </p>
+
+      <div class="thanks">¡Gracias!</div>
     </section>
 
     <footer class="footer">
-      <p class="muted small">Hecho con cariño para Demir Dután ✨</p>
+      <p class="muted small center">Hecho con cariño para Demir Dután ✨</p>
     </footer>
   </main>
 
+  <!-- Si a veces te queda cache, puedes usar: script.js?v=2 -->
   <script src="script.js"></script>
 </body>
 </html>
-

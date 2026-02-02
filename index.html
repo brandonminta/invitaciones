@@ -9,177 +9,132 @@
 </head>
 
 <body>
-  <!-- Decoraciones de fondo -->
+  <!-- Solo estas 2 decoraciones de fondo -->
   <img class="decor decor--jungle" src="img/jungle.png" alt="" aria-hidden="true">
   <img class="decor decor--leaf" src="img/leaf.png" alt="" aria-hidden="true">
-  <img class="decor decor--leave" src="img/leave.png" alt="" aria-hidden="true">
-  <img class="decor decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
 
   <main class="wrap">
 
-    <!-- HERO -->
-    <header class="paper hero">
-      <div class="hero-top">
-        <div class="badge">✝️🎂</div>
-      </div>
+    <!-- HOJA CONTINUA (sin cards separados) -->
+    <section class="sheet">
 
-      <h1 class="subtitle">Mi Bautizo y Primer Año</h1>
-      <h2 class="name">Demir Dután</h2>
+      <!-- HERO -->
+      <header class="hero">
+        <div class="hero-illustration">
+          <img src="img/hero.png" alt="Ilustración temática jungla" />
+        </div>
 
-      <div class="hero-illustration">
-        <img src="img/hero.png" alt="Ilustración temática jungla" />
-      </div>
+        <h1 class="bubble bubble--big bubble--green bubble--arched">Demir Dután</h1>
+        <h2 class="bubble bubble--mid bubble--cream">Mi Bautizo y Primer Año</h2>
 
-      <p class="greeting" id="greeting">Querid@ invitad@,</p>
+        <p class="quote">
+          En este día especial, la luz de Dios se encenderá en mi corazón para iluminar el camino de mi vida.
+        </p>
+      </header>
 
-      <p class="lead">
-        Con mucha alegría te invitamos a celebrar el <b>Bautizo</b> y el <b>Primer Cumpleaños</b> de nuestro amado Demir. 🦁🌿
-      </p>
+      <!-- MIS PADRES -->
+      <div class="ribbon-block">
+        <div class="wooden-title">
+          <img src="img/wooden.png" alt="" aria-hidden="true">
+          <div class="wooden-title__text bubble bubble--small bubble--green bubble--arched">Mis Padres</div>
+        </div>
 
-      <div class="meta">
-        <div class="pill">📅 Mar, 17 de febrero de 2026</div>
-        <div class="pill">📍 Santo Domingo, Ecuador</div>
-      </div>
-    </header>
-
-    <!-- FECHA + CONTADOR (estilo “placa / pergamino”) -->
-    <section class="paper">
-      <div class="scroll-date">
-        <div class="scroll-date__inner">
-          <div class="scroll-date__day">Martes</div>
-          <div class="scroll-date__date">17 Febrero</div>
-          <div class="scroll-date__year">2026</div>
+        <div class="name-box">
+          <div class="name-line">Joss</div>
+          <div class="name-sep">y</div>
+          <div class="name-line">May</div>
         </div>
       </div>
 
-      <h3 class="section-title">¿Cuánto falta?</h3>
-
-      <!-- Contador estilo barra -->
-      <div class="countbar" role="group" aria-label="Cuenta regresiva">
-        <div class="countbar__nums">
-          <span class="countbar__num" id="d">--</span>
-          <span class="countbar__sep">:</span>
-          <span class="countbar__num" id="h">--</span>
-          <span class="countbar__sep">:</span>
-          <span class="countbar__num" id="m">--</span>
-          <span class="countbar__sep">:</span>
-          <span class="countbar__num" id="s">--</span>
+      <!-- MIS PADRINOS -->
+      <div class="ribbon-block">
+        <div class="wooden-title">
+          <img src="img/wooden.png" alt="" aria-hidden="true">
+          <div class="wooden-title__text bubble bubble--small bubble--green bubble--arched">Mis Padrinos</div>
         </div>
-        <div class="countbar__labels" aria-hidden="true">
+
+        <div class="name-box">
+          <div class="name-line">Maria</div>
+          <div class="name-sep">y</div>
+          <div class="name-line">Jose</div>
+        </div>
+      </div>
+
+      <!-- FECHA (PAPIER) -->
+      <div class="date-scroll">
+        <img class="date-scroll__img" src="img/papier.png" alt="" aria-hidden="true">
+        <div class="date-scroll__text bubble bubble--mid bubble--cream bubble--border-brown">
+          Martes 17 Febrero
+        </div>
+      </div>
+
+      <!-- CUANTO FALTA + CONTADOR -->
+      <h3 class="section-label bubble bubble--small bubble--cream bubble--border-brown">¿Cuánto falta?</h3>
+
+      <div class="count-simple" aria-label="Cuenta regresiva">
+        <div class="count-simple__nums">
+          <span class="n" id="d">--</span><span class="sep">:</span>
+          <span class="n" id="h">--</span><span class="sep">:</span>
+          <span class="n" id="m">--</span><span class="sep">:</span>
+          <span class="n" id="s">--</span>
+        </div>
+        <div class="count-simple__labels" aria-hidden="true">
           <span>DÍAS</span><span>HORAS</span><span>MIN</span><span>SEG</span>
         </div>
       </div>
 
-      <p class="muted small center">Cuenta regresiva para la misa (11:00).</p>
-    </section>
+      <!-- MISA (círculo a la izquierda + jeep arriba derecha del círculo) -->
+      <section class="circle-section circle-section--left">
+        <div class="circle">
+          <div class="circle__title bubble bubble--small bubble--cream bubble--border-brown">Misa</div>
+          <div class="circle__time">🕚 11:00</div>
+          <div class="circle__place">📍 Iglesia Test</div>
 
-    <!-- MISA -->
-    <section class="paper">
-      <div class="ribbon">
-        <img src="img/wooden.png" alt="" aria-hidden="true">
-        <span>✝️ Misa</span>
-      </div>
-
-      <div class="row center">
-        <div class="pill">🕚 11:00</div>
-        <div class="pill">📍 Iglesia Test</div>
-      </div>
-
-      <div class="map-frame">
-        <img class="map-frame__img" src="img/frame.png" alt="" aria-hidden="true">
-        <div class="map-frame__content">
-          <p class="muted small center" style="margin:0 0 10px;">
-            Abre la ubicación en Google Maps:
-          </p>
-          <a class="btn" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
-            Mapa de ubicación
-          </a>
-
-          <!-- Si luego quieres embed, reemplaza el bloque de arriba por un iframe aquí -->
-          <!--
-          <iframe class="map-embed" src="TU_EMBED" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          -->
-        </div>
-      </div>
-    </section>
-
-    <!-- FIESTA -->
-    <section class="paper">
-      <div class="ribbon">
-        <img src="img/wooden.png" alt="" aria-hidden="true">
-        <span>🎉 Recepción</span>
-      </div>
-
-      <div class="row center">
-        <div class="pill">🕐 13:00</div>
-        <div class="pill">📍 Lugar Test</div>
-      </div>
-
-      <div class="map-frame">
-        <img class="map-frame__img" src="img/frame.png" alt="" aria-hidden="true">
-        <div class="map-frame__content">
-          <p class="muted small center" style="margin:0 0 10px;">
-            Abre la ubicación en Google Maps:
-          </p>
-          <a class="btn" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
+          <a class="btn-map" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
             Mapa de ubicación
           </a>
         </div>
-      </div>
+
+        <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
+      </section>
+
+      <!-- RECEPCIÓN (círculo a la derecha + coconut arriba izquierda del círculo) -->
+      <section class="circle-section circle-section--right">
+        <div class="circle">
+          <div class="circle__title bubble bubble--small bubble--cream bubble--border-brown">Recepción</div>
+          <div class="circle__time">🕐 13:00</div>
+          <div class="circle__place">📍 Lugar Test</div>
+
+          <a class="btn-map" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
+            Mapa de ubicación
+          </a>
+        </div>
+
+        <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
+      </section>
+
+      <!-- CONFIRMACIÓN -->
+      <section class="confirm">
+        <h3 class="section-label bubble bubble--small bubble--cream bubble--border-brown">Confirmación de Asistencia</h3>
+
+        <p class="confirm-text">
+          Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.
+        </p>
+
+        <button class="btn-rsvp" id="rsvpBtn">Sí asistiré</button>
+
+        <div class="thanks bubble bubble--small bubble--green">Gracias</div>
+        <p class="confirm-foot">Por ser parte de este momento tan especial.</p>
+      </section>
+
+      <footer class="footer">
+        <p>Hecho con cariño para Demir</p>
+      </footer>
+
     </section>
-
-    <!-- PADRES / PADRINOS -->
-    <section class="paper">
-      <div class="ribbon">
-        <img src="img/wooden.png" alt="" aria-hidden="true">
-        <span>Mis padres</span>
-      </div>
-      <p class="names center">
-        <b>Joss</b><br />
-        <span class="muted">y</span><br />
-        <b>May</b>
-      </p>
-
-      <div style="height:10px;"></div>
-
-      <div class="ribbon">
-        <img src="img/wooden.png" alt="" aria-hidden="true">
-        <span>Mis padrinos</span>
-      </div>
-      <p class="names center">
-        <b>Maria</b><br />
-        <span class="muted">y</span><br />
-        <b>Jose</b>
-      </p>
-    </section>
-
-    <!-- CONFIRMACIÓN -->
-    <section class="paper rsvp">
-      <div class="ribbon">
-        <img src="img/wooden.png" alt="" aria-hidden="true">
-        <span>Confirmación de asistencia</span>
-      </div>
-
-      <p class="text center" style="margin-top:10px;">
-        Nos encantaría saber que nos acompañarás. 💛<br/>
-        Presiona el botón y luego <b>Enviar</b> para confirmar.
-      </p>
-
-      <button class="btn primary" id="rsvpBtn">Sí asistiré</button>
-
-      <p class="muted small center" id="rsvpHint" style="margin-top:8px;">
-        Se abrirá el formulario con tu nombre prellenado (si usas el link personalizado).
-      </p>
-
-      <div class="thanks">¡Gracias!</div>
-    </section>
-
-    <footer class="footer">
-      <p class="muted small center">Hecho con cariño para Demir Dután ✨</p>
-    </footer>
   </main>
 
-  <!-- Si a veces te queda cache, puedes usar: script.js?v=2 -->
+  <!-- Si tienes caché, cambia a script.js?v=3 -->
   <script src="script.js"></script>
 </body>
 </html>

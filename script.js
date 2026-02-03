@@ -1,16 +1,18 @@
 // =========================
-// 1) Personalización por URL
+// 1) Personalización por URL (opcional)
 // =========================
 function getParam(key){
   const url = new URL(window.location.href);
   return url.searchParams.get(key);
 }
 
+// Si sigues mandando links tipo ?name=Brandon, lo guardamos por si lo quieres usar luego.
+// (Pero ya NO lo prellenamos en el Form)
 const invitee = (getParam("name") || "").trim();
 
 
 // =========================
-// 2) Contador (misa 11:00) — Santo Domingo (UTC-5)
+// 2) Contador — 21 Feb 2026 12:45 (UTC-5)
 // =========================
 const target = new Date("2026-02-21T12:45:00-05:00");
 
@@ -26,10 +28,10 @@ function tick(){
   let diff = target - now;
 
   if (diff <= 0){
-    dEl.textContent = "00";
-    hEl.textContent = "00";
-    mEl.textContent = "00";
-    sEl.textContent = "00";
+    if (dEl) dEl.textContent = "00";
+    if (hEl) hEl.textContent = "00";
+    if (mEl) mEl.textContent = "00";
+    if (sEl) sEl.textContent = "00";
     return;
   }
 
@@ -39,41 +41,36 @@ function tick(){
   const mins = Math.floor((sec % 3600) / 60);
   const secs = sec % 60;
 
-  dEl.textContent = pad(days);
-  hEl.textContent = pad(hours);
-  mEl.textContent = pad(mins);
-  sEl.textContent = pad(secs);
+  if (dEl) dEl.textContent = pad(days);
+  if (hEl) hEl.textContent = pad(hours);
+  if (mEl) mEl.textContent = pad(mins);
+  if (sEl) sEl.textContent = pad(secs);
 }
 
 tick();
 setInterval(tick, 1000);
 
+
 // =========================
-// 3) RSVP: botón "ASISTIRÉ" con nombre prellenado
+// 3) RSVP: botón abre el Google Form (ellos escriben su nombre)
 // =========================
-
-// 🔴 IMPORTANTE:
-// Reemplaza esto con tu link "pre-filled" de Google Forms,
-// pero SOLO hasta el signo "=" del entry del NOMBRE.
-//
-// Ejemplo real (ficticio):
-// const FORM_PREFILL_BASE = "https://docs.google.com/forms/d/e/XXXXX/viewform?usp=pp_url&entry.123456789=";
-
-const FORM_PREFILL_BASE =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfLBIkZd2bMnQ1hl3HSAmF9QQ7-w8F3R3pFjW_ykoXMgZZv-g/viewform?usp=pp_url&entry.860157850=";
-
+const FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfLBIkZd2bMnQ1hl3HSAmF9QQ7-w8F3R3pFjW_ykoXMgZZv-g/viewform";
 
 const rsvpBtn = document.getElementById("rsvpBtn");
 const rsvpHint = document.getElementById("rsvpHint");
 
-rsvpBtn.addEventListener("click", () => {
-  if (!FORM_PREFILL_BASE || FORM_PREFILL_BASE.includes("PEGA_AQUI")){
-    alert("Falta conectar el Google Form. Pega tu link prellenado en script.js (FORM_PREFILL_BASE).");
-    return;
-  }
+if (rsvpHint){
+  // Mensaje opcional (por si lo tienes en tu HTML)
+  rsvpHint.textContent = "Se abrirá el formulario para que ingreses tu nombre y confirmes tu asistencia.";
+}
 
-  const nameValue = invitee ? encodeURIComponent(invitee) : encodeURIComponent("Invitado");
-  const url = FORM_PREFILL_BASE + nameValue;
-
-  window.open(url, "_blank", "noopener");
-});
+if (rsvpBtn){
+  rsvpBtn.addEventListener("click", () => {
+    if (!FORM_URL || !FORM_URL.startsWith("https://docs.google.com/forms/")){
+      alert("Falta conectar el Google Form. Revisa la variable FORM_URL en script.js.");
+      return;
+    }
+    window.open(FORM_URL, "_blank", "noopener");
+  });
+}

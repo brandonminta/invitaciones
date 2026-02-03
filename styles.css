@@ -3,7 +3,11 @@
 
   --cream: #fff6e7;
   --brown: #6b4a2c;
-  --green: #2f6b3a;
+
+  /* verde más claro para Demir */
+  --nameGreen: #55c07a;
+
+  /* borde verde oscuro para nombres */
   --greenDark: #1f5a2b;
 
   --text: rgba(38, 36, 34, .92);
@@ -70,9 +74,7 @@ body{
   margin: 4px auto 6px;
 }
 
-/* ===== Tipos ===== */
-
-/* Changa One SOLO títulos (clase .t) */
+/* Títulos Changa One */
 .t{
   font-family: "Changa One", system-ui, sans-serif;
   display:block;
@@ -83,7 +85,7 @@ body{
   -webkit-font-smoothing: antialiased;
 }
 
-/* Texto cuerpo con Grandstander */
+/* Texto cuerpo Grandstander */
 .p{
   font-family: "Grandstander", system-ui, sans-serif;
   text-align:center;
@@ -93,7 +95,6 @@ body{
   color: var(--muted);
   font-weight: 650;
 }
-
 .p--quote{ margin-top: 12px; }
 .p--body{ margin-top: 10px; }
 .p--foot{
@@ -102,127 +103,42 @@ body{
   color: rgba(38,36,34,.62);
 }
 
-/* ===== BORDES de texto (abombado) ===== */
-/* crema con borde café (para la mayoría) */
-.stroke-cream-brown{
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(107,74,44,.78),
-     2px -2px 0 rgba(107,74,44,.78),
-    -2px  2px 0 rgba(107,74,44,.78),
-     2px  2px 0 rgba(107,74,44,.78),
-    -3px  0px 0 rgba(107,74,44,.70),
-     3px  0px 0 rgba(107,74,44,.70),
-     0px -3px 0 rgba(107,74,44,.70),
-     0px  3px 0 rgba(107,74,44,.70);
+/* ===== Arcos SVG (estable) ===== */
+.arc-svg{
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display:block;
+  margin: 0 auto;
+  overflow: visible;
 }
 
-/* verde con borde café grueso (Demir) */
-.stroke-green-brown-heavy{
-  color: rgba(47,107,58,.98);
-  text-shadow:
-    -3px -3px 0 rgba(107,74,44,.90),
-     3px -3px 0 rgba(107,74,44,.90),
-    -3px  3px 0 rgba(107,74,44,.90),
-     3px  3px 0 rgba(107,74,44,.90),
-    -4px  0px 0 rgba(107,74,44,.86),
-     4px  0px 0 rgba(107,74,44,.86),
-     0px -4px 0 rgba(107,74,44,.86),
-     0px  4px 0 rgba(107,74,44,.86),
-    0 12px 20px rgba(40,30,15,.10);
+.arc-text{
+  font-family: "Changa One", system-ui, sans-serif;
+  font-weight: 400;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
-/* crema con borde verde oscuro (nombres) */
-.stroke-cream-green{
-  color: var(--cream);
-  text-shadow:
-    -2px -2px 0 rgba(31,90,43,.88),
-     2px -2px 0 rgba(31,90,43,.88),
-    -2px  2px 0 rgba(31,90,43,.88),
-     2px  2px 0 rgba(31,90,43,.88),
-    -3px  0px 0 rgba(31,90,43,.78),
-     3px  0px 0 rgba(31,90,43,.78),
-     0px -3px 0 rgba(31,90,43,.78),
-     0px  3px 0 rgba(31,90,43,.78);
+/* Demir: verde claro + borde café grueso + más espacio */
+.arc-text--demir{
+  font-size: 88px;
+  fill: var(--nameGreen);
+  stroke: var(--brown);
+  stroke-width: 14px;
+  letter-spacing: 6px;
+  filter: drop-shadow(0 10px 14px rgba(40,30,15,.12));
+}
+.arc-svg--demir{
+  margin-top: 6px;
+  margin-bottom: 2px;
 }
 
-/* Títulos específicos */
+/* Subtítulo crema + borde café */
 .t--sub{
   font-size: 22px;
   margin-top: 10px;
-}
-.t--sub{ /* crema con borde café */
-  composes: stroke-cream-brown;
-}
-
-/* OJO: composes no existe en CSS puro.
-   Por eso repetimos estilo usando clases auxiliares más abajo. */
-
-/* Label: “Cuánto falta>”, “Confirmación…” */
-.t--label{
-  font-size: 20px;
-  margin: 0 auto 10px;
-}
-
-/* Círculo: MISA / RECEPCIÓN */
-.t--circle{
-  font-size: 24px;
-}
-
-/* Gracias */
-.t--thanks{
-  font-size: 26px;
-  margin-top: 16px;
-}
-
-/* ===== Arco REAL (semicírculo) ===== */
-.arc{
-  position: relative;
-  width: 320px;
-  height: 110px;
-  margin: 0 auto;
-}
-.arc span{
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform-origin: 0 120px;
-  font-family: "Changa One", system-ui, sans-serif;
-  font-weight: 400;
-  display:inline-block;
-  white-space: pre;
-}
-.arc .gap{ width: 14px; }
-
-/* DEMIR arco: grande + borde grueso */
-.arc--demir{
-  width: 340px;
-  height: 125px;
-  margin-top: 2px;
-}
-.arc--demir span{
-  font-size: 44px;
-}
-.arc--demir span{
-  color: rgba(47,107,58,.98);
-  text-shadow:
-    -3px -3px 0 rgba(107,74,44,.90),
-     3px -3px 0 rgba(107,74,44,.90),
-    -3px  3px 0 rgba(107,74,44,.90),
-     3px  3px 0 rgba(107,74,44,.90),
-    -4px  0px 0 rgba(107,74,44,.86),
-     4px  0px 0 rgba(107,74,44,.86),
-     0px -4px 0 rgba(107,74,44,.86),
-     0px  4px 0 rgba(107,74,44,.86);
-}
-
-/* Wooden arco: un poco más pequeño, crema + borde café */
-.arc--wood{
-  width: 320px;
-  height: 105px;
-}
-.arc--wood span{
-  font-size: 26px;
   color: var(--cream);
   text-shadow:
     -2px -2px 0 rgba(107,74,44,.78),
@@ -235,61 +151,49 @@ body{
      0px  3px 0 rgba(107,74,44,.70);
 }
 
-/* Posicionamiento de letras en arco (manual para 11-12 chars aprox) */
-/* DEMIR DUTÁN (10 letras + espacio) */
-/* DEMIR DUTÁN – arco más suave */
-.arc--demir span:nth-child(1){ transform: rotate(-18deg) translateX(-50%); }
-.arc--demir span:nth-child(2){ transform: rotate(-14deg) translateX(-50%); }
-.arc--demir span:nth-child(3){ transform: rotate(-10deg) translateX(-50%); }
-.arc--demir span:nth-child(4){ transform: rotate(-6deg)  translateX(-50%); }
-.arc--demir span:nth-child(5){ transform: rotate(-2deg)  translateX(-50%); }
-.arc--demir span:nth-child(6){ transform: rotate(2deg)   translateX(-50%); opacity:0; } /* gap */
-.arc--demir span:nth-child(7){ transform: rotate(6deg)   translateX(-50%); }
-.arc--demir span:nth-child(8){ transform: rotate(10deg)  translateX(-50%); }
-.arc--demir span:nth-child(9){ transform: rotate(14deg)  translateX(-50%); }
-.arc--demir span:nth-child(10){ transform: rotate(18deg) translateX(-50%); }
-.arc--demir span:nth-child(11){ transform: rotate(22deg) translateX(-50%); }
-
-
-/* MIS PADRES (9 letras + espacio): ajusta arco bonito */
-.arc--wood span:nth-child(1){ transform: rotate(-14deg) translateX(-50%); }
-.arc--wood span:nth-child(2){ transform: rotate(-10deg) translateX(-50%); }
-.arc--wood span:nth-child(3){ transform: rotate(-6deg)  translateX(-50%); }
-.arc--wood span:nth-child(4){ transform: rotate(-2deg)  translateX(-50%); opacity:0; }
-.arc--wood span:nth-child(5){ transform: rotate(2deg)   translateX(-50%); }
-.arc--wood span:nth-child(6){ transform: rotate(6deg)   translateX(-50%); }
-.arc--wood span:nth-child(7){ transform: rotate(10deg)  translateX(-50%); }
-.arc--wood span:nth-child(8){ transform: rotate(14deg)  translateX(-50%); }
-.arc--wood span:nth-child(9){ transform: rotate(18deg)  translateX(-50%); }
-
-
-/* Wooden container */
+/* Wooden title */
 .wooden-title{
   position: relative;
   display:flex;
   justify-content:center;
   align-items:center;
-  margin: 2px 0 4px;
+  margin: 2px 0 2px;
 }
 .wooden-title img{
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   display:block;
   filter: drop-shadow(0 12px 18px rgba(40,30,15,.14));
 }
-.wooden-title .arc{
+
+/* SVG encima del ribbon */
+.arc-svg--wood{
   position:absolute;
-  top: -6px;
+  width: 92%;
+  max-width: 420px;
+  top: -10px; /* ajusta fino si quieres: -6 a -14 */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events:none;
 }
 
-/* Nombres sin caja, pegados */
+.arc-text--wood{
+  font-size: 56px;
+  fill: var(--cream);
+  stroke: var(--brown);
+  stroke-width: 10px;
+  letter-spacing: 3px;
+  filter: drop-shadow(0 10px 12px rgba(40,30,15,.12));
+}
+
+/* Nombres (Changa One) crema + borde verde oscuro, sin caja */
 .names{
   margin: 2px auto 0;
   text-align:center;
   line-height: 1.18;
 }
+
 .name{
-  display:block;
   font-family: "Changa One", system-ui, sans-serif;
   font-weight: 400;
   font-size: 26px;
@@ -304,8 +208,8 @@ body{
      0px -3px 0 rgba(31,90,43,.78),
      0px  3px 0 rgba(31,90,43,.78);
 }
+
 .and{
-  display:block;
   margin: 2px 0;
   font-weight: 900;
   color: rgba(38,36,34,.60);
@@ -347,10 +251,10 @@ body{
      0px  3px 0 rgba(107,74,44,.70);
 }
 
-/* Label styles (Cuánto falta / Confirmación) */
+/* Label (Cuanto falta / Confirmación) */
 .t--label{
-  font-family: "Changa One", system-ui, sans-serif;
-  font-weight: 400;
+  font-size: 20px;
+  margin: 0 auto 10px;
   color: var(--cream);
   text-shadow:
     -2px -2px 0 rgba(107,74,44,.78),
@@ -419,12 +323,12 @@ body{
   min-height: 260px;
 }
 
-/* “metidos” a los bordes (ocultos un poco) */
+/* Más metidos a los bordes (se ocultan un poco) */
 .circle-section--left{ display:flex; justify-content:flex-start; }
-.circle-section--left .circle{ margin-left: -24px; }   /* se corta un poco */
+.circle-section--left .circle{ margin-left: -30px; }
 
 .circle-section--right{ display:flex; justify-content:flex-end; }
-.circle-section--right .circle{ margin-right: -24px; } /* se corta un poco */
+.circle-section--right .circle{ margin-right: -30px; }
 
 .circle{
   width: min(370px, 96%);
@@ -446,9 +350,8 @@ body{
   font-size: 28px;
   filter: drop-shadow(0 10px 16px rgba(40,30,15,.12));
 }
+
 .t--circle{
-  font-family: "Changa One", system-ui, sans-serif;
-  font-weight: 400;
   font-size: 26px;
   color: var(--cream);
   text-shadow:
@@ -464,7 +367,6 @@ body{
   font-size: 22px;
   margin: 2px 0 6px;
 }
-
 .circle__place{
   text-align:center;
   font-weight: 850;
@@ -472,6 +374,7 @@ body{
   margin: 0 0 14px;
 }
 
+/* Botón mapa mejorado */
 .btn-map{
   display:flex;
   align-items:center;
@@ -489,7 +392,7 @@ body{
 }
 .btn-map:active{ transform: scale(.99); }
 
-/* Decoraciones */
+/* Decoraciones (jeep/coconut) */
 .circle-decor{
   position:absolute;
   width: 128px;
@@ -497,15 +400,11 @@ body{
   user-select:none;
   filter: drop-shadow(0 14px 20px rgba(40,30,15,.12));
 }
-
-/* jeep arriba derecha */
 .circle-decor--jeep{
   right: 6%;
   top: -26px;
   transform: rotate(10deg);
 }
-
-/* coconut arriba derecha (pediste moverlo a la derecha) */
 .circle-decor--coconut{
   right: 10%;
   top: -28px;
@@ -537,8 +436,6 @@ body{
 .btn-rsvp:active{ transform: scale(.99); }
 
 .t--thanks{
-  font-family: "Changa One", system-ui, sans-serif;
-  font-weight: 400;
   font-size: 28px;
   margin-top: 16px;
   color: var(--cream);
@@ -551,10 +448,9 @@ body{
 
 /* Responsive */
 @media (max-width: 420px){
-  .arc--demir{ width: 320px; height: 115px; }
-  .arc--demir span{ font-size: 40px; }
-  .arc{ width: 300px; }
-  .arc--wood span{ font-size: 24px; }
-  .circle-section--left .circle{ margin-left: -18px; }
-  .circle-section--right .circle{ margin-right: -18px; }
+  .arc-text--demir{ font-size: 78px; stroke-width: 12px; letter-spacing: 5px; }
+  .arc-text--wood{ font-size: 50px; stroke-width: 9px; }
+  .circle-section--left .circle{ margin-left: -22px; }
+  .circle-section--right .circle{ margin-right: -22px; }
+  .circle-decor{ width: 118px; }
 }

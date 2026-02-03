@@ -383,17 +383,21 @@ body{
 
 /* Botón mapa mejorado */
 .btn-map{
-  background: rgba(255,255,255,0.45);   /* fondo translúcido */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.45); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
-  border: 2px solid rgba(107,74,44,0.35); /* café suave */
-  color: rgba(38,36,34,0.92);
-
-  box-shadow: 0 10px 18px rgba(40,30,15,0.12);
-}
-.btn-map:hover{
-  background: rgba(255,255,255,0.6);
+  border: 2px solid rgba(107,74,44,.38);
+  color: rgba(38,36,34,.92);
+  text-decoration: none;
+  font-weight: 1000;
+  box-shadow: 0 14px 24px rgba(40,30,15,.10);
 }
 .btn-map:active{ transform: scale(.99); }
 

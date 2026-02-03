@@ -176,7 +176,7 @@ body{
   position:absolute;
   width: 96%;
   max-width: 460px;
-  top: -18px;                /* ajusta para que caiga sobre el ribbon */
+  top: -8px;                /* ajusta para que caiga sobre el ribbon */
   left: 50%;
   transform: translateX(-50%);
   pointer-events:none;

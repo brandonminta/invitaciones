@@ -12,7 +12,7 @@ const invitee = (getParam("name") || "").trim();
 // =========================
 // 2) Contador (misa 11:00) — Santo Domingo (UTC-5)
 // =========================
-const target = new Date("2026-02-17T11:00:00-05:00");
+const target = new Date("2026-02-21T12:45:00-05:00");
 
 const dEl = document.getElementById("d");
 const hEl = document.getElementById("h");

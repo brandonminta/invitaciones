@@ -26,14 +26,14 @@
         <img src="img/hero.png" alt="Ilustración temática jungla" />
       </div>
 
-      <!-- DEMIR arqueado con SVG (estable) -->
-      <svg class="arc-svg arc-svg--demir" viewBox="0 0 700 240" role="img" aria-label="Demir Dután">
+      <!-- DEMIR arqueado (más arqueado) + grande + borde -->
+      <svg class="arc-svg arc-svg--demir" viewBox="0 0 700 260" role="img" aria-label="Demir Dután">
         <defs>
-          <!-- Arco suave: radio grande = menos arqueado -->
-          <path id="arc-demir" d="M70,190 A360,360 0 0 1 630,190" />
+          <!-- Más arqueado: radio menor -->
+          <path id="arc-demir" d="M65,205 A300,300 0 0 1 635,205" />
         </defs>
         <text class="arc-text arc-text--demir">
-          <textPath href="#arc-demir" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+          <textPath href="#arc-demir" startOffset="50%" text-anchor="middle">
             Demir&nbsp;Dután
           </textPath>
         </text>
@@ -51,13 +51,13 @@
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
 
-        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 240" aria-label="Mis Padres">
+        <!-- SVG SOBRE ribbon (centrado) -->
+        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 260" aria-label="Mis Padres">
           <defs>
-            <!-- Un poquito arqueado para calzar sobre el ribbon -->
-            <path id="arc-parents" d="M120,175 A320,320 0 0 1 580,175" />
+            <path id="arc-parents" d="M110,190 A260,260 0 0 1 590,190" />
           </defs>
           <text class="arc-text arc-text--wood">
-            <textPath href="#arc-parents" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+            <textPath href="#arc-parents" startOffset="50%" text-anchor="middle">
               Mis&nbsp;Padres
             </textPath>
           </text>
@@ -76,12 +76,12 @@
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
 
-        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 240" aria-label="Mis Padrinos">
+        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 260" aria-label="Mis Padrinos">
           <defs>
-            <path id="arc-godparents" d="M120,175 A320,320 0 0 1 580,175" />
+            <path id="arc-godparents" d="M110,190 A260,260 0 0 1 590,190" />
           </defs>
           <text class="arc-text arc-text--wood">
-            <textPath href="#arc-godparents" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+            <textPath href="#arc-godparents" startOffset="50%" text-anchor="middle">
               Mis&nbsp;Padrinos
             </textPath>
           </text>
@@ -107,9 +107,9 @@
       </div>
     </section>
 
-    <!-- CUANTO FALTA > -->
+    <!-- ¿CUÁNTO FALTA? -->
     <section class="block">
-      <h3 class="t t--label">Cuanto falta&gt;</h3>
+      <h3 class="t t--label">¿Cuánto falta?</h3>
 
       <div class="count-simple" aria-label="Cuenta regresiva">
         <div class="count-simple__nums">
@@ -124,10 +124,12 @@
       </div>
     </section>
 
-    <div class="spacer"></div>
+    <div class="spacer spacer--big"></div>
 
-    <!-- MISA (más metido al borde izquierdo) -->
+    <!-- MISA (más a la izquierda) -->
     <section class="circle-section circle-section--left">
+      <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
+
       <div class="circle">
         <div class="circle__head">
           <div class="circle__icon">⛪</div>
@@ -138,35 +140,34 @@
         <div class="circle__place">Iglesia Test</div>
 
         <a class="btn-map" href="https://maps.app.goo.gl/8rSr1humtESHHZmC8" target="_blank" rel="noopener">
-          <span class="btn-map__icon">📍</span>
-          <span>Mapa de ubicación</span>
+          <span class="btn-map__icon">🗺️</span>
+          <span>Ver mapa de ubicación</span>
         </a>
       </div>
-
-      <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
     </section>
 
-    <!-- RECEPCION (más metido al borde derecho) -->
+    <!-- RECEPCIÓN (más a la derecha) -->
     <section class="circle-section circle-section--right">
+      <!-- Coconut a la izquierda del círculo -->
+      <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
+
       <div class="circle">
         <div class="circle__head">
           <div class="circle__icon">🎉</div>
-          <div class="t t--circle">RECEPCION</div>
+          <div class="t t--circle">RECEPCIÓN</div>
         </div>
 
         <div class="circle__time">13:00</div>
         <div class="circle__place">Lugar Test</div>
 
         <a class="btn-map" href="https://maps.app.goo.gl/TyBWyjdYAuT7DPxd8" target="_blank" rel="noopener">
-          <span class="btn-map__icon">📍</span>
-          <span>Mapa de ubicación</span>
+          <span class="btn-map__icon">🗺️</span>
+          <span>Ver mapa de ubicación</span>
         </a>
       </div>
-
-      <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
     </section>
 
-    <!-- CONFIRMACION -->
+    <!-- CONFIRMACIÓN -->
     <section class="confirm block">
       <h3 class="t t--label">Confirmación de Asistencia</h3>
 
@@ -174,7 +175,7 @@
         Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.
       </p>
 
-      <button class="btn-rsvp" id="rsvpBtn">Si asistire</button>
+      <button class="btn-rsvp" id="rsvpBtn">Sí asistiré</button>
 
       <div class="t t--thanks">Gracias</div>
 

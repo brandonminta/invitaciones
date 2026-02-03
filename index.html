@@ -26,12 +26,18 @@
         <img src="img/hero.png" alt="Ilustración temática jungla" />
       </div>
 
-      <!-- DEMIR arqueado REAL (semicírculo) -->
-      <div class="arc arc--demir" aria-label="Demir Dután">
-        <span>D</span><span>e</span><span>m</span><span>i</span><span>r</span>
-        <span class="gap"></span>
-        <span>D</span><span>u</span><span>t</span><span>á</span><span>n</span>
-      </div>
+      <!-- DEMIR arqueado con SVG (estable) -->
+      <svg class="arc-svg arc-svg--demir" viewBox="0 0 700 240" role="img" aria-label="Demir Dután">
+        <defs>
+          <!-- Arco suave: radio grande = menos arqueado -->
+          <path id="arc-demir" d="M70,190 A360,360 0 0 1 630,190" />
+        </defs>
+        <text class="arc-text arc-text--demir">
+          <textPath href="#arc-demir" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+            Demir&nbsp;Dután
+          </textPath>
+        </text>
+      </svg>
 
       <h2 class="t t--sub">Mi Bautizo y Primer Año</h2>
 
@@ -44,39 +50,52 @@
     <section class="block">
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
-        <div class="arc arc--wood" aria-label="Mis Padres">
-          <span>M</span><span>i</span><span>s</span>
-          <span class="gap"></span>
-          <span>P</span><span>a</span><span>d</span><span>r</span><span>e</span><span>s</span>
-        </div>
+
+        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 240" aria-label="Mis Padres">
+          <defs>
+            <!-- Un poquito arqueado para calzar sobre el ribbon -->
+            <path id="arc-parents" d="M120,175 A320,320 0 0 1 580,175" />
+          </defs>
+          <text class="arc-text arc-text--wood">
+            <textPath href="#arc-parents" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+              Mis&nbsp;Padres
+            </textPath>
+          </text>
+        </svg>
       </div>
 
-      <p class="names">
-        <span class="name">Dután León Maykel Douglas</span>
-        <span class="and">y</span>
-        <span class="name">Corte Macas Josselyn Anabel</span>
-      </p>
+      <div class="names">
+        <div class="name">Joss</div>
+        <div class="and">y</div>
+        <div class="name">May</div>
+      </div>
     </section>
 
     <!-- MIS PADRINOS -->
     <section class="block">
       <div class="wooden-title">
         <img src="img/wooden.png" alt="" aria-hidden="true">
-        <div class="arc arc--wood" aria-label="Mis Padrinos">
-          <span>M</span><span>i</span><span>s</span>
-          <span class="gap"></span>
-          <span>P</span><span>a</span><span>d</span><span>r</span><span>i</span><span>n</span><span>o</span><span>s</span>
-        </div>
+
+        <svg class="arc-svg arc-svg--wood" viewBox="0 0 700 240" aria-label="Mis Padrinos">
+          <defs>
+            <path id="arc-godparents" d="M120,175 A320,320 0 0 1 580,175" />
+          </defs>
+          <text class="arc-text arc-text--wood">
+            <textPath href="#arc-godparents" startOffset="50%" text-anchor="middle" lengthAdjust="spacing">
+              Mis&nbsp;Padrinos
+            </textPath>
+          </text>
+        </svg>
       </div>
 
-      <p class="names">
-        <span class="name">Macas Macas Gladys Lorena</span>
-        <span class="and">y</span>
-        <span class="name">Corte Muy Celio Mesias</span>
-      </p>
+      <div class="names">
+        <div class="name">Maria</div>
+        <div class="and">y</div>
+        <div class="name">Jose</div>
+      </div>
     </section>
 
-    <!-- FECHA 3 LÍNEAS sobre papier -->
+    <!-- FECHA sobre papier (3 líneas) -->
     <section class="block">
       <div class="date-scroll">
         <img class="date-scroll__img" src="img/papier.png" alt="" aria-hidden="true">
@@ -88,9 +107,9 @@
       </div>
     </section>
 
-    <!-- CUÁNTO FALTA > -->
+    <!-- CUANTO FALTA > -->
     <section class="block">
-      <h3 class="t t--label">¿Cuánto falta?</h3>
+      <h3 class="t t--label">Cuanto falta&gt;</h3>
 
       <div class="count-simple" aria-label="Cuenta regresiva">
         <div class="count-simple__nums">
@@ -127,12 +146,12 @@
       <img class="circle-decor circle-decor--jeep" src="img/jeep.png" alt="" aria-hidden="true">
     </section>
 
-    <!-- RECEPCIÓN (más metido al borde derecho) -->
+    <!-- RECEPCION (más metido al borde derecho) -->
     <section class="circle-section circle-section--right">
       <div class="circle">
         <div class="circle__head">
           <div class="circle__icon">🎉</div>
-          <div class="t t--circle">RECEPCIÓN</div>
+          <div class="t t--circle">RECEPCION</div>
         </div>
 
         <div class="circle__time">13:00</div>
@@ -147,7 +166,7 @@
       <img class="circle-decor circle-decor--coconut" src="img/coconut.png" alt="" aria-hidden="true">
     </section>
 
-    <!-- CONFIRMACIÓN -->
+    <!-- CONFIRMACION -->
     <section class="confirm block">
       <h3 class="t t--label">Confirmación de Asistencia</h3>
 
